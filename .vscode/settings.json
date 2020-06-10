@@ -14,5 +14,9 @@
   "liveSassCompile.settings.autoprefix": [
     "> 1%",
     "last 2 versions"
-  ]
+  ],
+  "extensions.ignoreRecommendations": true,
+  "files.autoSave": "off"
+  "extensions.ignoreRecommendations": true,
+  "files.autoSave": "off"
 }

@@ -7,8 +7,8 @@
     <link href="https://fonts.googleapis.com/css2?family=Bungee+Inline&family=Roboto:wght@400;700&display=swap" rel="stylesheet"> 
     <link rel="stylesheet" href="styles/styles.css">
 </head>
+    <div class="wrapperContainer">
     <header>
-        <div class="wrapperContainer">
           <div id="hero">
             <h1>Travel</h1>
             <div class="textContainer">
@@ -19,9 +19,8 @@
               <span>I</span>
               <span>A</span>
             </div>
-            <button>Start</button>
-          </div>
-        </div>      
+            <button id="startBtn">Start</button>
+          </div>     
     </header>
     <main>
       <div class="mainGame">
@@ -29,13 +28,13 @@
           <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam, necessitatibus?</p>
         </div>
         <div class="mutipleChoices">
-          <button type="button" id="buttons">answer1</button>
-          <button type="button" id="buttons">answer2</button>
-          <button type="button" id="buttons">answer3</button>
-          <button type="button" id="buttons">answer4</button>
-          <div class="extraButtons">
-            <button type="button" id="extraButtons">Help</button>
-            <button type="button" id="extraButtons" disabled>Free Pass</button>
+          <input type="button" class="buttons" value="answer1">
+          <input type="button" class="buttons" value="answer2">
+          <input type="button" class="buttons" value="answer3">
+          <input type="button" class="buttons" value="answer4">
+          <div class="extraButtons-container">
+            <input type="button" class="extraButtons" value="Help">
+            <input type="button" class="extraButtons" disabled value="Free Pass">
           </div>
         </div>
       </div>
@@ -47,5 +46,6 @@
     <footer>
       <p>Developed by Eyel Mordido & Jenny Dinh</p>
     </footer>
+    </div> 
 </body>
 </html>
