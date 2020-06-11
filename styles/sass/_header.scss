@@ -26,7 +26,7 @@ h1 {
   @keyframes glow {
     0%, 100% {
       color: #FFF;
-      text-shadow: 0 0 10px #E9D758, 0 0 50px #E9D758, 0 0 100px #E9D758;
+      text-shadow: 0 0 10px #B38800, 0 0 50px #B38800, 0 0 100px #B38800
     }
     
     10%, 90% {
@@ -71,7 +71,7 @@ h1 {
 button {
     all: unset;
     padding: 0.8em 2em;
-    color: #E9D758;
+    color: #B38800;
     text-transform: uppercase;
     font: 700 1.4rem 'Roboto', sans-serif;
     letter-spacing: 0.15em;
@@ -86,7 +86,7 @@ button {
 }
 :root {
     --background-colour: none;
-    --border-colour: #E9D758;
+    --border-colour: #B38800;
     --border-width: 6px;
     
 }
