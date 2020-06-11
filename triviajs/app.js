@@ -1,29 +1,52 @@
-console.log('Hello');
-
 const travelTrivia = {};
+travelTrivia.url = 'https://opentdb.com/api.php';
+const buttonChoices = document.getElementsByClassName('answerButtons');
 
-travelTrivia.url = 'https://opentdb.com/api.php?amount=10&category=22&difficulty=hard&type=multiple';
-
-
-travelTrivia.getQuestions = function (query) {
-    $.ajax({
+travelTrivia.getData = function() {
+    return $.ajax({
         url: travelTrivia.url,
         method: 'GET',
         dataType: 'json',
         data: {
-            format: 'json',
-            q: query
+            amount: 1,
+            category: 22,
+            difficulty: 'hard',
+            type: 'multiple'
         }
-    }).then(function(results){
-        console.log(results)
-    })
+     })
+};
+// store promise in a variable
+travelTrivia.Data = travelTrivia.getData()
+travelTrivia.Data.then( function (arrayOfData) {
+    arrayOfObj = arrayOfData.results[0];
+    travelTrivia.displayQuestion(arrayOfObj);
+    travelTrivia.displayChoices(arrayOfObj);
+})
+
+travelTrivia.displayQuestion = function(array) {
+    const question = array.question;
+    $('.question').html(`
+    <p>${question}</p>`);
+}
+
+travelTrivia.displayChoices  = function(array) {
+    const rightAnswer = array['correct_answer'];
+    const wrongAnswers = array['incorrect_answers'];
+    const answers = [rightAnswer, ...wrongAnswers];
+   
+    answers.sort(function() { return Math.floor(4*Math.random()) });
+
+    for (let i = 0; i <  answers.length; i++ ) {
+        buttonChoices[i].value = answers[i];
+        
+    }
+
 }
 
 //initalizating 
-travelTrivia.init = function () {
-    travelTrivia.getQuestions();
+travelTrivia.init = function() {
+    travelTrivia.getData();
 }
-
 $(document).ready(function(){
-    
- })
+    travelTrivia.init();    
+})
