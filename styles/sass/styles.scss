@@ -1,4 +1,5 @@
 @import 'setup';
+@import 'mixinVariables';
 @import 'header';
 @import 'main';
 @import 'footer';
@@ -6,5 +7,12 @@
 body {
   font: 400 1rem 'Roboto', sans-serif;
   color: white;
+}
+img {
+  display: block;
+}
+
+h3 {
+  font: 400 2rem 'Roboto', sans-serif;
 }
 

@@ -9,10 +9,12 @@ header {
 
 #hero {
     text-align: center;
-    border: 10px solid #A49694;
+    border: 40px solid #A49694;
+    padding: 40px;
+    margin: 100px;
 }
 h1 {
-    color: #F2F7F2;
+    color: $fontColor;
     font-family: 'Bungee Inline', cursive;
     font-size: 8rem;
 }
@@ -25,8 +27,8 @@ h1 {
   
   @keyframes glow {
     0%, 100% {
-      color: #FFF;
-      text-shadow: 0 0 10px #B38800, 0 0 50px #B38800, 0 0 100px #B38800
+      color: $fontColor;
+      text-shadow: 0 0 10px $btnColor, 0 0 50px $btnColor, 0 0 100px $btnColor;
     }
     
     10%, 90% {
@@ -36,27 +38,27 @@ h1 {
   }
   
   .textContainer > span:nth-child(2) {
-      animation-delay: 0.5s;
+      animation-delay: 0.25s;
   }
   
   .textContainer > span:nth-child(3) {
-      animation-delay: 1s;
+      animation-delay: 0.5s;
   }
   
   .textContainer > span:nth-child(4) {
-      animation-delay: 1.5s;
+      animation-delay: 1s;
   }
   
   .textContainer > span:nth-child(5) {
-      animation-delay: 2s;
+      animation-delay: 1.25s;
   }
   
   .textContainer > span:nth-child(6) {
-      animation-delay: 2.5s;
+      animation-delay: 1.5s;
   }
   
   .textContainer > span:nth-child(7) {
-      animation-delay: 3s;
+      animation-delay: 2s;
   }
 
 @keyframes rotate {
@@ -69,24 +71,11 @@ h1 {
 }
 
 button {
-    all: unset;
-    padding: 0.8em 2em;
-    color: #B38800;
-    text-transform: uppercase;
-    font: 700 1.4rem 'Roboto', sans-serif;
-    letter-spacing: 0.15em;
-    text-align: center;
-    position: relative;
-    border-radius: 8px;
-    border: var(--border-width) solid var(--border-colour);
-    transform: rotateX(15deg);
-    animation: rotate ease-out 6s infinite alternate;
-    transform-style: inherit;
-    cursor: pointer;
+    @include startBtn;
 }
 :root {
     --background-colour: none;
-    --border-colour: #B38800;
+    --border-colour: $btnColor;
     --border-width: 6px;
     
 }
