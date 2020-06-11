@@ -7,3 +7,14 @@ html { -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: 
 *, *:before, *:after {box-sizing: inherit}
 
 .sr-only { position: absolute; width: 1px; height: 1px; margin: -1px; border: 0; padding: 0; white-space: nowrap; clip-path: inset(100%); clip: rect(0 0 0 0); overflow: hidden;}
+
+img {
+  display: block;
+  width: 100%;
+}
+
+.wrapperContainer {
+  max-width: 1200px;
+  margin: 0 auto;
+  width: 100%;
+}
