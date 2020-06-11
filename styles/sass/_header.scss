@@ -9,10 +9,12 @@ header {
 
 #hero {
     text-align: center;
-    border: 10px solid #A49694;
+    border: 40px solid #A49694;
+    padding: 40px;
+    margin: 100px;
 }
 h1 {
-    color: #F2F7F2;
+    color: $fontColor;
     font-family: 'Bungee Inline', cursive;
     font-size: 8rem;
 }
@@ -25,8 +27,8 @@ h1 {
   
   @keyframes glow {
     0%, 100% {
-      color: #FFF;
-      text-shadow: 0 0 10px #E9D758, 0 0 50px #E9D758, 0 0 100px #E9D758;
+      color: $fontColor;
+      text-shadow: 0 0 10px $btnColor, 0 0 50px $btnColor, 0 0 100px $btnColor;
     }
     
     10%, 90% {
@@ -69,24 +71,11 @@ h1 {
 }
 
 button {
-    all: unset;
-    padding: 0.8em 2em;
-    color: #E9D758;
-    text-transform: uppercase;
-    font: 700 1.4rem 'Roboto', sans-serif;
-    letter-spacing: 0.15em;
-    text-align: center;
-    position: relative;
-    border-radius: 8px;
-    border: var(--border-width) solid var(--border-colour);
-    transform: rotateX(15deg);
-    animation: rotate ease-out 6s infinite alternate;
-    transform-style: inherit;
-    cursor: pointer;
+    @include startBtn;
 }
 :root {
     --background-colour: none;
-    --border-colour: #E9D758;
+    --border-colour: $btnColor;
     --border-width: 6px;
     
 }

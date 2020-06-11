@@ -1,0 +1,25 @@
+footer {
+    background-color: #141301;
+}
+.flexFooter {
+    display: flex;
+    justify-content: center;
+    align-content: center;
+}
+.icon {
+    font-size: 3rem;
+    color: $btnColor;
+    padding: 0 10px;
+}
+.icon:hover,
+.icon:focus {
+    color: $fontColor;
+}
+.devOne,
+.devTwo {
+    padding: 20px;
+    text-align: center;
+}
+footer p {
+    text-align: center;
+}
