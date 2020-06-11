@@ -239,18 +239,23 @@ html {
   background-color: #39393A;
 }
 
+header {
+  height: 100vh;
+}
+
 #hero {
   text-align: center;
+  border: 10px solid #A49694;
 }
 
 h1 {
   color: #F2F7F2;
-  font-family: 'Acme', sans-serif;
+  font-family: 'Bungee Inline', cursive;
   font-size: 8rem;
 }
 
 .textContainer > span {
-  font-family: 'Acme', sans-serif;
+  font-family: 'Bungee Inline', cursive;
   font-size: 8rem;
   text-transform: uppercase;
   -webkit-animation: glow 2s ease-in-out infinite;
@@ -336,8 +341,7 @@ button {
   padding: 0.8em 2em;
   color: #E9D758;
   text-transform: uppercase;
-  font-weight: bold;
-  font-size: 1.4rem;
+  font: 700 1.4rem 'Roboto', sans-serif;
   letter-spacing: 0.15em;
   text-align: center;
   position: relative;
@@ -357,4 +361,45 @@ button {
   --border-colour: #E9D758;
   --border-width: 6px;
 }
-/*# sourceMappingURL=styles.css.map */
+
+main {
+  height: 100vh;
+}
+
+.question {
+  font-size: 3rem;
+  letter-spacing: 3px;
+  padding: 50px 200px;
+  text-align: center;
+}
+
+.buttons {
+  font: 700 1.4rem 'Roboto', sans-serif;
+  letter-spacing: 0.15em;
+  text-transform: capitalize;
+  text-align: center;
+  border-radius: 8px;
+  border: 3px solid #E9D758;
+  color: white;
+  background: none;
+  padding: 10px 20px;
+}
+
+.extraButtons {
+  width: 105px;
+  height: 105px;
+  border-radius: 50%;
+  font: 700 1rem 'Roboto', sans-serif;
+  letter-spacing: 0.15em;
+  text-transform: capitalize;
+  text-align: center;
+  border: 3px solid #E9D758;
+  color: white;
+  background: none;
+  padding: 5px;
+}
+
+body {
+  font: 400 1rem 'Roboto', sans-serif;
+  color: white;
+}

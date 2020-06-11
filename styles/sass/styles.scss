@@ -1,2 +1,9 @@
 @import 'setup';
 @import 'header';
+@import 'main';
+@import 'footer';
+
+body {
+  font: 400 1rem 'Roboto', sans-serif;
+  color: white;
+}

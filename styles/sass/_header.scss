@@ -1,16 +1,23 @@
 html    {
     background-color: #39393A;
 }
+
+header {
+    height: 100vh;
+
+}
+
 #hero {
     text-align: center;
+    border: 10px solid #A49694;
 }
 h1 {
     color: #F2F7F2;
-    font-family: 'Acme', sans-serif;
+    font-family: 'Bungee Inline', cursive;
     font-size: 8rem;
 }
 .textContainer > span {
-    font-family: 'Acme', sans-serif;
+    font-family: 'Bungee Inline', cursive;
     font-size: 8rem;
     text-transform: uppercase;
     animation: glow 2s ease-in-out infinite;
@@ -66,8 +73,7 @@ button {
     padding: 0.8em 2em;
     color: #E9D758;
     text-transform: uppercase;
-    font-weight: bold;
-    font-size: 1.4rem;
+    font: 700 1.4rem 'Roboto', sans-serif;
     letter-spacing: 0.15em;
     text-align: center;
     position: relative;
