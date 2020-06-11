@@ -235,6 +235,17 @@ html {
   overflow: hidden;
 }
 
+img {
+  display: block;
+  width: 100%;
+}
+
+.wrapperContainer {
+  max-width: 1200px;
+  margin: 0 auto;
+  width: 100%;
+}
+
 html {
   background-color: #39393A;
 }
@@ -362,10 +373,6 @@ button {
   --border-width: 6px;
 }
 
-main {
-  height: 100vh;
-}
-
 .question {
   font-size: 3rem;
   letter-spacing: 3px;
@@ -373,9 +380,14 @@ main {
   text-align: center;
 }
 
-.buttons {
-  font: 700 1.4rem 'Roboto', sans-serif;
-  letter-spacing: 0.15em;
+.multipleChoices {
+  padding: 50px 200px;
+  text-align: center;
+}
+
+.answerButtons {
+  font: 400 1.3rem 'Roboto', sans-serif;
+  letter-spacing: 0.1em;
   text-transform: capitalize;
   text-align: center;
   border-radius: 8px;
@@ -383,6 +395,15 @@ main {
   color: white;
   background: none;
   padding: 10px 20px;
+  margin-right: 20px;
+}
+
+.answerButtons:last-of-type {
+  margin-right: 0;
+}
+
+.extraButtonsContainer {
+  margin-top: 20px;
 }
 
 .extraButtons {
@@ -397,6 +418,37 @@ main {
   color: white;
   background: none;
   padding: 5px;
+}
+
+.extraButtons:first-of-type {
+  margin-right: 20px;
+}
+
+main {
+  position: relative;
+}
+
+.modalBox {
+  text-align: center;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 10;
+  width: 100%;
+  height: 100%;
+}
+
+.modalBox img {
+  max-width: 300px;
+  position: relative;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+}
+
+.modalBox p {
+  font: 6rem 'Bungee Inline', cursive;
+  line-height: 0.8;
 }
 
 body {
