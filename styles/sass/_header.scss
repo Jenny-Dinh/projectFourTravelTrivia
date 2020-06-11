@@ -36,27 +36,27 @@ h1 {
   }
   
   .textContainer > span:nth-child(2) {
-      animation-delay: 0.5s;
+      animation-delay: 0.25s;
   }
   
   .textContainer > span:nth-child(3) {
-      animation-delay: 1s;
+      animation-delay: 0.5s;
   }
   
   .textContainer > span:nth-child(4) {
-      animation-delay: 1.5s;
+      animation-delay: 1s;
   }
   
   .textContainer > span:nth-child(5) {
-      animation-delay: 2s;
+      animation-delay: 1.25s;
   }
   
   .textContainer > span:nth-child(6) {
-      animation-delay: 2.5s;
+      animation-delay: 1.5s;
   }
   
   .textContainer > span:nth-child(7) {
-      animation-delay: 3s;
+      animation-delay: 2s;
   }
 
 @keyframes rotate {
