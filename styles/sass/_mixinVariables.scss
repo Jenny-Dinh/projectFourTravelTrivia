@@ -1,0 +1,20 @@
+$assetColor: #A49694;
+$fontColor: #F2F7F2;
+$btnColor: #E9D758;
+
+@mixin startBtn {
+    all: unset;
+    padding: 0.8em 2em;
+    color: $btnColor;
+    text-transform: uppercase;
+    font: 700 1.4rem 'Roboto', sans-serif;
+    letter-spacing: 0.15em;
+    text-align: center;
+    position: relative;
+    border-radius: 8px;
+    border: 4px solid #E9D758;
+    transform: rotateX(15deg);
+    animation: rotate ease-out 6s infinite alternate;
+    transform-style: inherit;
+    cursor: pointer;
+}
