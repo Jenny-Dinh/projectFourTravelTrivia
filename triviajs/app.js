@@ -2,8 +2,17 @@ const travelTrivia = {};
 travelTrivia.url = 'https://opentdb.com/api.php';
 const buttonChoices = document.getElementsByClassName('answerButtons');
 
+
+travelTrivia.startGame = function() {
+    $("#startBtn").on('click', function() {
+        $([document.documentElement, document.body]).animate({
+            scrollTop: $("main").offset().top
+        }, 500);
+    });
+}
+
 travelTrivia.getData = function() {
-    return $.ajax({
+    $.ajax({
         url: travelTrivia.url,
         method: 'GET',
         dataType: 'json',
@@ -13,26 +22,20 @@ travelTrivia.getData = function() {
             difficulty: 'hard',
             type: 'multiple'
         }
-     })
-};
-
-// store promise in a variable
-travelTrivia.Data = travelTrivia.getData()
-
-travelTrivia.Data.then( function (arrayOfData) {
+     }).then( function (arrayOfData) {
     
-    arrayOfObj = arrayOfData.results[0];
-
-    travelTrivia.displayQuestion(arrayOfObj);
-
-    travelTrivia.displayChoices(arrayOfObj);
-
-    // travelTrivia.freePass();
-
+        arrayOfObj = arrayOfData.results[0];
     
-})
-// store promise in a variable
-travelTrivia.Data = travelTrivia.getData()
+        travelTrivia.displayQuestion(arrayOfObj);
+    
+        travelTrivia.displayChoices(arrayOfObj);
+    
+        travelTrivia.freePass();
+    
+        
+        
+    })
+}
 
 // display question on the page  
 travelTrivia.displayQuestion = function(array) {
@@ -57,15 +60,19 @@ travelTrivia.displayChoices  = function(array) {
 }
 
 travelTrivia.freePass = function() {
-    $('.freePass').on('click', function() {
-
+    $('#freePass').on('click', function() {
+        $('#freePass').attr('disabled', 'true');
+        travelTrivia.getData();
+        travelTrivia.displayQuestion(arrayOfObj);
     })
 }
 
 //initalizating 
 travelTrivia.init = function() {
     travelTrivia.getData();
+    travelTrivia.startGame(); 
 }
+
 $(document).ready(function(){
     travelTrivia.init();    
 })
