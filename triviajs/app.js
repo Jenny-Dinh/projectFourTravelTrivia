@@ -1,6 +1,6 @@
 const travelTrivia = {};
-
 travelTrivia.url = 'https://opentdb.com/api.php';
+const buttonChoices = document.getElementsByClassName('answerButtons');
 
 travelTrivia.getData = function() {
     return $.ajax({
@@ -25,41 +25,47 @@ travelTrivia.Data.then( function (arrayOfData) {
 
     travelTrivia.displayQuestion(arrayOfObj);
 
-    travelTrivia.freePass();
+    travelTrivia.displayChoices(arrayOfObj);
+
+    // travelTrivia.freePass();
 
     
 })
+// store promise in a variable
+travelTrivia.Data = travelTrivia.getData()
+
 // display question on the page  
 travelTrivia.displayQuestion = function(array) {
     const question = array.question;
     $('.question').html(`
     <p>${question}</p>`);
 }
-// scroll to main window when start button is clicked
-travelTrivia.startTrivia = function() {
-    $('#startBtn').on('click', function() {
-        $([document.documentElement, document.body]).animate({
-            scrollTop: $('main').offset().top
-        }, 500);
-    });
+
+// display answers randomly
+travelTrivia.displayChoices  = function(array) {
+    const rightAnswer = array['correct_answer'];
+    const wrongAnswers = array['incorrect_answers'];
+    const answers = [rightAnswer, ...wrongAnswers];
+   
+    answers.sort(function() { return Math.floor(4*Math.random()) });
+
+    for (let i = 0; i <  answers.length; i++ ) {
+        buttonChoices[i].value = answers[i];
+        
+    }
+
 }
 
-// free pass button on click displays a different question and set of answers and disables
 travelTrivia.freePass = function() {
-    $('#freePass').on('click', function() {
-        console.log('Free pass');
-        // $('#freePass').attr('disabled', 'true');
-        travelTrivia.getData();
-        travelTrivia.displayQuestion(arrayOfObj);
+    $('.freePass').on('click', function() {
+
     })
 }
-        
+
 //initalizating 
 travelTrivia.init = function() {
     travelTrivia.getData();
-    travelTrivia.startTrivia();
 }
-
 $(document).ready(function(){
     travelTrivia.init();    
 })
