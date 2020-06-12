@@ -32,8 +32,6 @@ travelTrivia.getData = function() {
     
         travelTrivia.freePass();
     
-        
-        
     })
 }
 
