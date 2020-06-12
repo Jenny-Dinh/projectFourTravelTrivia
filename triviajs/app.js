@@ -3,6 +3,7 @@ travelTrivia.url = 'https://opentdb.com/api.php';
 travelTrivia.buttonChoices = $('.answerButtons');
 travelTrivia.counter = 0;
 let rightAnswer;
+let wrongAnswers;
 
 
 travelTrivia.startGame = function() {
@@ -30,6 +31,7 @@ travelTrivia.getData = function() {
             travelTrivia.displayQuestion(arrayOfObj);
             travelTrivia.displayChoices(arrayOfObj);
             travelTrivia.freePass();
+            travelTrivia.fiftyFiftyButton();
          });    
     })
 }
@@ -44,7 +46,7 @@ travelTrivia.displayQuestion = function(array) {
 // display answers randomly
 travelTrivia.displayChoices  = function(array) {
     rightAnswer = array['correct_answer'];
-    const wrongAnswers = array['incorrect_answers'];
+    wrongAnswers = array['incorrect_answers'];
     const answers = [rightAnswer, ...wrongAnswers];
     answers.sort(function() { return Math.floor(4*Math.random()) });
     for (let i = 0; i <  answers.length; i++ ) {
@@ -71,6 +73,24 @@ travelTrivia.rightOrWrong = function () {
             });
         }
     });
+}
+//50/50 button to disappear two incorrect answers
+travelTrivia.fiftyFiftyButton = function () {
+    $('#fiftyFifty').on('click', function(){
+    wrongAnswers.sort(function() { 
+        return Math.floor(3 * Math.random()) 
+    });
+    let halfChoices = [rightAnswer, wrongAnswers[0]];
+    console.log(halfChoices);
+    for (let i = 0; i < travelTrivia.buttonChoices.length; i++){
+
+        if (travelTrivia.buttonChoices[i].value != halfChoices[0] && travelTrivia.buttonChoices[i].value != halfChoices[1]) {
+            travelTrivia.buttonChoices[i].style.display = 'none';
+            console.log('BREAK');
+          
+        }  
+    }
+    })
 }
 
 travelTrivia.freePass = function() {
