@@ -1,8 +1,8 @@
 const travelTrivia = {};
 travelTrivia.url = 'https://opentdb.com/api.php';
-const buttonChoices = $('.answerButtons');
+travelTrivia.buttonChoices = $('.answerButtons');
+travelTrivia.counter = 0;
 let rightAnswer;
-let counter = 0;
 
 
 travelTrivia.startGame = function() {
@@ -48,7 +48,7 @@ travelTrivia.displayChoices  = function(array) {
     const answers = [rightAnswer, ...wrongAnswers];
     answers.sort(function() { return Math.floor(4*Math.random()) });
     for (let i = 0; i <  answers.length; i++ ) {
-        buttonChoices[i].value = answers[i];
+        travelTrivia.buttonChoices[i].value = answers[i];
     }
     //debugging purposes only
     console.log(rightAnswer);
@@ -65,7 +65,7 @@ travelTrivia.rightOrWrong = function () {
               })
         } else {
             //will use this to implement maxQuestions of 10
-            counter++;
+            travelTrivia.counter++;
             $('.mainGame').fadeOut('slow', function(){
                 travelTrivia.getData(); 
             });
