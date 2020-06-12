@@ -1,6 +1,8 @@
 const travelTrivia = {};
 travelTrivia.url = 'https://opentdb.com/api.php';
-const buttonChoices = document.getElementsByClassName('answerButtons');
+const buttonChoices = $('.answerButtons');
+let rightAnswer;
+let counter = 0;
 
 
 travelTrivia.startGame = function() {
@@ -23,30 +25,31 @@ travelTrivia.getData = function() {
             type: 'multiple'
         }
      }).then( function (arrayOfData) {
+         $('.mainGame').fadeIn(2000, function(){
+            arrayOfObj = arrayOfData.results[0];
+            travelTrivia.displayQuestion(arrayOfObj);
+            travelTrivia.displayChoices(arrayOfObj);
+            travelTrivia.freePass();
+         });    
+        // arrayOfObj = arrayOfData.results[0];
+        // travelTrivia.displayQuestion(arrayOfObj);
+        // travelTrivia.displayChoices(arrayOfObj);
+        // travelTrivia.freePass();
     
-        arrayOfObj = arrayOfData.results[0];
-    
-        travelTrivia.displayQuestion(arrayOfObj);
-    
-        travelTrivia.displayChoices(arrayOfObj);
-    
-        travelTrivia.freePass();
-    
-        
-        
     })
 }
 
 // display question on the page  
 travelTrivia.displayQuestion = function(array) {
-    const question = array.question;
+
+    const question = array['question'];
     $('.question').html(`
     <p>${question}</p>`);
 }
 
 // display answers randomly
 travelTrivia.displayChoices  = function(array) {
-    const rightAnswer = array['correct_answer'];
+    rightAnswer = array['correct_answer'];
     const wrongAnswers = array['incorrect_answers'];
     const answers = [rightAnswer, ...wrongAnswers];
    
@@ -54,9 +57,29 @@ travelTrivia.displayChoices  = function(array) {
 
     for (let i = 0; i <  answers.length; i++ ) {
         buttonChoices[i].value = answers[i];
-        
     }
+    console.log(rightAnswer);
+}
 
+
+travelTrivia.rightOrWrong = function () {
+    
+    $('.answerButtons').on('click', function() {
+    
+        if ($(this).val() != rightAnswer){
+            Swal.fire({
+                icon: 'error',
+                title: 'Too Bad!',
+                text: 'Sorry! You didn\'t win. Please Play again',
+              })
+        } else {
+            counter++;
+            console.log(counter);
+            $('.mainGame').fadeOut('slow', function(){
+                travelTrivia.getData(); 
+            });
+        }
+    });
 }
 
 travelTrivia.freePass = function() {
@@ -70,7 +93,9 @@ travelTrivia.freePass = function() {
 //initalizating 
 travelTrivia.init = function() {
     travelTrivia.getData();
-    travelTrivia.startGame(); 
+    travelTrivia.startGame();
+    travelTrivia.rightOrWrong(); 
+    
 }
 
 $(document).ready(function(){
