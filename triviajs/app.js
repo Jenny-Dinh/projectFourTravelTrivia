@@ -2,7 +2,7 @@ const travelTrivia = {};
 travelTrivia.url = 'https://opentdb.com/api.php';
 travelTrivia.buttonChoices = $('.answerButtons');
 travelTrivia.counter = 0;
-let rightAnswer;
+// let rightAnswer;
 
 
 travelTrivia.startGame = function() {
@@ -25,12 +25,11 @@ travelTrivia.getData = function() {
             type: 'multiple'
         }
      }).then( function (arrayOfData) {
-         $('.mainGame').fadeIn(2000, function(){
-            arrayOfObj = arrayOfData.results[0];
-            travelTrivia.displayQuestion(arrayOfObj);
-            travelTrivia.displayChoices(arrayOfObj);
-            travelTrivia.freePass();
-         });    
+        arrayOfObj = arrayOfData.results[0];
+        travelTrivia.displayQuestion(arrayOfObj);
+        travelTrivia.displayChoices(arrayOfObj);
+        $('.mainGame').fadeIn(2000);
+        travelTrivia.freePass();
     })
 }
 
@@ -43,21 +42,24 @@ travelTrivia.displayQuestion = function(array) {
 
 // display answers randomly
 travelTrivia.displayChoices  = function(array) {
-    rightAnswer = array['correct_answer'];
-    const wrongAnswers = array['incorrect_answers'];
-    const answers = [rightAnswer, ...wrongAnswers];
+    let rightAnswer = array['correct_answer'];
+    let wrongAnswers = array['incorrect_answers'];
+    let answers = [rightAnswer, ...wrongAnswers];
     answers.sort(function() { return Math.floor(4*Math.random()) });
     for (let i = 0; i <  answers.length; i++ ) {
         travelTrivia.buttonChoices[i].value = answers[i];
     }
+    travelTrivia.rightOrWrong(rightAnswer);
     //debugging purposes only
-    console.log(rightAnswer);
+    console.log('right answer:', rightAnswer);
 }
 
 //Display incorrect/correct answer 
-travelTrivia.rightOrWrong = function () {
+travelTrivia.rightOrWrong = function (correctAnswer) {
     $('.answerButtons').on('click', function() {
-        if ($(this).val() != rightAnswer){
+        const buttonVal = $(this).val();
+        console.log('button value:', buttonVal);
+        if (buttonVal != correctAnswer){
             Swal.fire({
                 icon: 'error',
                 title: 'Too Bad!',
@@ -66,9 +68,8 @@ travelTrivia.rightOrWrong = function () {
         } else {
             //will use this to implement maxQuestions of 10
             travelTrivia.counter++;
-            $('.mainGame').fadeOut('slow', function(){
-                travelTrivia.getData(); 
-            });
+            travelTrivia.getData(); 
+            $('.mainGame').fadeOut('slow');
         }
     });
 }
@@ -85,7 +86,7 @@ travelTrivia.freePass = function() {
 travelTrivia.init = function() {
     travelTrivia.getData();
     travelTrivia.startGame();
-    travelTrivia.rightOrWrong(); 
+    // travelTrivia.rightOrWrong(); 
     
 }
 
