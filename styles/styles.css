@@ -378,6 +378,7 @@ button {
 main {
   height: 100vh;
   position: relative;
+  display: none;
 }
 
 .borderBlue {
@@ -421,6 +422,12 @@ main {
 
 .answerButtons:last-of-type {
   margin-right: 0;
+}
+
+.answerButtons:hover,
+.answerButtons:focus {
+  background-color: #E9D758;
+  color: black;
 }
 
 .extraButtonsContainer {
