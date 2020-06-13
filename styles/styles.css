@@ -394,8 +394,9 @@ button:focus {
 }
 
 main {
+  height: 100%;
   position: relative;
-  padding: 100px 0;
+  padding-bottom: 100px;
   display: none;
 }
 
@@ -447,10 +448,8 @@ main {
   padding: 10px 20px;
   margin-bottom: 20px;
   cursor: pointer;
-  width: 225px;
   -webkit-transition: border 0.4s, color 0.4s;
   transition: border 0.4s, color 0.4s;
-  word-wrap: break-word;
 }
 
 .answerButtons:hover, .answerButtons:focus {

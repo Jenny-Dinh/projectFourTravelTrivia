@@ -1,7 +1,7 @@
 main {
-  // height: 100vh;
+  height: 100%;
   position: relative;
-  padding: 100px 0;
+  padding-bottom: 100px;
   display: none;
 }
 
@@ -9,12 +9,6 @@ main {
   border: 15px solid $borderColor;
   border-radius: 20px;
 }
-
-// .mainGame {
-  // position: absolute;
-  // top: 50%;
-  // transform: translateY(-50%);
-// }
 
 .question {
   @include boxShadow;
@@ -49,12 +43,7 @@ main {
   padding: 10px 20px;
   margin-bottom: 20px;
   cursor: pointer;
-  width: 225px;
   transition: border 0.4s, color 0.4s;
-  word-wrap: break-word;
-  // &:last-of-type {
-  //   margin-right: 0;
-  // }
   &:hover,
   &:focus {
     border: 3px solid $borderColor;
