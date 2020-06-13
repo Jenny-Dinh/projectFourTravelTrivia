@@ -1,35 +1,55 @@
-footer {
-    background-color: #141301;
-}
+// footer {
+    // background-color: #141301;
+// }
+
 .flexFooter {
+    @include gradientBackground;
+    @include boxShadow;
     display: flex;
     justify-content: center;
     align-content: center;
-}
-li {
-    list-style-type: none;
+    flex-wrap: wrap;
+    padding: 10px 0;
+    margin-bottom: 40px;
+    & + p {
+        flex-basis: 100%;
+        margin: 0;
+    }
+    h3 {
+        font-size: 1.2rem;
+        margin: 0;
+        margin-bottom: 10px;
+        letter-spacing: 2px;
+    }
+    p {
+        text-align: center;
+        flex-basis: 100%;
+        letter-spacing: 1px;
+        a {
+            text-decoration: none;
+            color: $btnColor;
+            transition: color 0.4s;
+            &:hover, &:focus {
+                color: $borderColor;
+            }
+        }
+    }
+    li {
+        list-style-type: none;
+    }
 }
 .icon {
-    font-size: 3rem;
+    font-size: 2.2rem;
     color: $btnColor;
     padding: 0 10px;
+    transition: color 0.4s;
 }
 .icon:hover,
 .icon:focus {
-    color: $fontColor;
+    color: $borderColor;
 }
 .devOne,
 .devTwo {
     padding: 20px;
     text-align: center;
-}
-footer p {
-    text-align: center;
-}
-a {
-    color: $btnColor;
-}
-a:hover,
-a:focus {
-    color: #fff;
 }

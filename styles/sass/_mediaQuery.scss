@@ -7,6 +7,10 @@
     .textContainer > span {
         font-size: 5.5rem;
     }
+    button #startBtn {
+    padding: 0;
+    font-size: 1rem;
+    }
     .question {
         font-size: 2rem;
         padding: 10px 100px;
@@ -23,10 +27,27 @@
 
 //smaller tablet version
 @media only screen and (max-width: 550px) {
-
+    h1 {
+        font-size: 4rem;
+        margin: 0;
+    }
+    .textContainer > span {
+        font-size: 4rem;
+    }
 }
 
 //Tablet to mobile
 @media only screen and (max-width: 350px) {
-
+    h1 {
+        font-size: 2.5rem;
+        margin: 0;
+    }
+    .textContainer > span {
+        font-size: 2.5rem;
+    }
+    button {
+        padding: 0.2;
+        font-size: 1rem;
+        }
 }
+

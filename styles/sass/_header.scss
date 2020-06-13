@@ -1,23 +1,34 @@
 html    {
-    background-color: #39393A;
+    background-color: #222;
+}
+
+header {
+    height: 100vh;
 }
 
 .heroSection {
+    @include boxShadow;
+    @include gradientBackground;
     text-align: center;
-    border: 40px solid #A49694;
-    padding: 40px;
-    margin: 100px;
+    padding: 70px 40px;
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
 }
 h1 {
     color: $fontColor;
     font-family: 'Bungee Inline', cursive;
-    font-size: 8rem;
+    font-size: 9rem;
+    margin: 0;
+    text-shadow: -20px 20px 10px #111;
+    letter-spacing: 5px;
 }
 .textContainer > span {
     font-family: 'Bungee Inline', cursive;
-    font-size: 8rem;
+    font-size: 9rem;
     text-transform: uppercase;
     animation: glow 2s ease-in-out infinite;
+    letter-spacing: 5px;
   }
   
   @keyframes glow {
@@ -27,8 +38,8 @@ h1 {
     }
     
     10%, 90% {
-      color: #111;
-      text-shadow: none;
+      color: #333;
+      text-shadow: -20px 20px 10px #111;
     }
   }
   
@@ -67,7 +78,15 @@ h1 {
 
 button {
     @include startBtn;
+    transition: border 0.4s, color 0.4s;
 }
+
+button:hover,
+button:focus {
+    border: 4px solid $borderColor;
+    color: $fontColor;
+}
+
 :root {
     --background-colour: none;
     --border-colour: $btnColor;
