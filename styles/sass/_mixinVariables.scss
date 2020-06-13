@@ -1,7 +1,7 @@
 $assetColor: #A49694;
 $fontColor: #F2F7F2;
-$btnColor: #E9D758;
-$borderColor: #2949FF;
+$btnColor: #B38800;
+$borderColor: #321AE8;
 
 @mixin startBtn {
     all: unset;
@@ -13,9 +13,17 @@ $borderColor: #2949FF;
     text-align: center;
     position: relative;
     border-radius: 8px;
-    border: 4px solid #E9D758;
+    border: 4px solid $btnColor;
     transform: rotateX(15deg);
     animation: rotate ease-out 6s infinite alternate;
     transform-style: inherit;
     cursor: pointer;
+}
+
+@mixin gradientBackground { 
+    background: linear-gradient(rgba(21, 11, 99, 0.3) 50%, rgba(67, 58, 140, 0.3));
+}
+
+@mixin boxShadow {
+    box-shadow: -40px 40px 30px #111;
 }

@@ -1,21 +1,24 @@
 main {
-  height: 100vh;
+  // height: 100vh;
   position: relative;
+  padding: 100px 0;
   display: none;
 }
 
 .borderBlue {
-  border: 8px solid $borderColor;
+  border: 15px solid $borderColor;
   border-radius: 20px;
 }
 
-.mainGame {
-  position: relative;
-  top: 50%;
-  transform: translateY(-50%);
-}
+// .mainGame {
+  // position: absolute;
+  // top: 50%;
+  // transform: translateY(-50%);
+// }
 
 .question {
+  @include boxShadow;
+  @include gradientBackground;
   font-size: 3rem;
   letter-spacing: 3px;
   padding: 20px 200px;
@@ -24,8 +27,14 @@ main {
 }
 
 .multipleChoices {
-  padding: 50px 200px;
+  @include boxShadow;
+  @include gradientBackground;
+  padding: 50px 50px;
   text-align: center;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-items: flex-start;
 }
 
 .answerButtons {
@@ -34,19 +43,27 @@ main {
   text-transform: capitalize;
   text-align: center;
   border-radius: 8px;
-  border: 3px solid #E9D758;
+  border: 3px solid $btnColor;
   color: $fontColor;
   background: none;
   padding: 10px 20px;
-  margin-right: 20px;
+  margin-bottom: 20px;
   cursor: pointer;
-  &:last-of-type {
-    margin-right: 0;
+  width: 225px;
+  transition: border 0.4s, color 0.4s;
+  word-wrap: break-word;
+  // &:last-of-type {
+  //   margin-right: 0;
+  // }
+  &:hover,
+  &:focus {
+    border: 3px solid $borderColor;
   }
 }
 
 .extraButtonsContainer {
   margin-top: 20px;
+  flex-basis: 100%;
 }
 
 .extraButtons {
@@ -62,8 +79,13 @@ main {
   background: none;
   padding: 5px;
   cursor: pointer;
+  transition: border 0.4s, color 0.4s;
   &:first-of-type {
     margin-right: 20px;
+  }
+  &:hover,
+  &:focus {
+    border: 3px solid $borderColor;
   }
 } 
 

@@ -27,7 +27,7 @@ travelTrivia.getData = function() {
         }
      }).then( function (arrayOfData) {
         arrayOfObj = arrayOfData.results[0];
-        $('.mainGame').fadeIn(2000);
+        $('.mainGame').fadeTo(2000, 1);
         travelTrivia.freePass();
         travelTrivia.displayQuestion(arrayOfObj);
         travelTrivia.displayChoices(arrayOfObj);
@@ -67,7 +67,7 @@ travelTrivia.rightOrWrong = function (correctAnswer) {
         } else {
             //will use this to implement maxQuestions of 10
             travelTrivia.counter++;
-            $('.mainGame').fadeOut('slow');
+            $('.mainGame').fadeTo('slow', 0);
             setTimeout(function() {
                 travelTrivia.getData(); 
             }, 900);
@@ -80,7 +80,7 @@ travelTrivia.freePass = function() {
         $('#freePass')
         .fadeTo(500, 0.2)
         .attr('disabled', 'true');
-        $('.mainGame').fadeOut('slow');
+        $('.mainGame').fadeTo('slow', 0);
         setTimeout(function() {
             travelTrivia.getData(); 
         }, 900);
