@@ -125,7 +125,7 @@ travelTrivia.endGame = function(counter, maxQuestions){
     if (counter == maxQuestions - 1){
         $('.modalBox').css('display', 'block');
         $('header').css('display', 'none');
-        $('mainGame').css('display', 'none');
+        $('.mainGame').css('opacity', '0');
     }
 }
 

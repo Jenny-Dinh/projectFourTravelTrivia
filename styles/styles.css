@@ -513,11 +513,11 @@ main {
   line-height: 0.8;
 }
 
-footer {
-  background-color: #141301;
-}
-
 .flexFooter {
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(50%, rgba(21, 11, 99, 0.3)), to(rgba(67, 58, 140, 0.3)));
+  background: linear-gradient(rgba(21, 11, 99, 0.3) 50%, rgba(67, 58, 140, 0.3));
+  -webkit-box-shadow: -40px 40px 30px #111;
+          box-shadow: -40px 40px 30px #111;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -526,26 +526,63 @@ footer {
           justify-content: center;
   -ms-flex-line-pack: center;
       align-content: center;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  padding: 10px 0;
+  margin-bottom: 40px;
+}
+
+.flexFooter + p {
+  -ms-flex-preferred-size: 100%;
+      flex-basis: 100%;
+  margin: 0;
+}
+
+.flexFooter h3 {
+  font-size: 1.2rem;
+  margin: 0;
+  margin-bottom: 10px;
+  letter-spacing: 2px;
+}
+
+.flexFooter p {
+  text-align: center;
+  -ms-flex-preferred-size: 100%;
+      flex-basis: 100%;
+  letter-spacing: 1px;
+}
+
+.flexFooter p a {
+  text-decoration: none;
+  color: #B38800;
+  -webkit-transition: color 0.4s;
+  transition: color 0.4s;
+}
+
+.flexFooter p a:hover, .flexFooter p a:focus {
+  color: #321AE8;
+}
+
+.flexFooter li {
+  list-style-type: none;
 }
 
 .icon {
-  font-size: 3rem;
+  font-size: 2.2rem;
   color: #B38800;
   padding: 0 10px;
+  -webkit-transition: color 0.4s;
+  transition: color 0.4s;
 }
 
 .icon:hover,
 .icon:focus {
-  color: #F2F7F2;
+  color: #321AE8;
 }
 
 .devOne,
 .devTwo {
   padding: 20px;
-  text-align: center;
-}
-
-footer p {
   text-align: center;
 }
 
