@@ -1,6 +1,7 @@
 main {
   height: 100%;
   position: relative;
+  margin-top: 100px;
   padding-bottom: 100px;
   display: none;
 }
@@ -49,11 +50,6 @@ main {
     border: 3px solid $borderColor;
   }
 }
-.answerButtons:hover,
-.answerButtons:focus {
-  background-color: #E9D758;
-  color: black;
-}
 
 .extraButtonsContainer {
   margin-top: 20px;
@@ -82,10 +78,6 @@ main {
     border: 3px solid $borderColor;
   }
 } 
-// .extraButtons:hover,
-// .extraButtons:hover {
-
-// }
 
 .modalBox {
   text-align: center;

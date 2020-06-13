@@ -33,6 +33,7 @@ travelTrivia.getData = function() {
         travelTrivia.freePass();
         travelTrivia.displayQuestion(arrayOfObj);
         travelTrivia.displayChoices(arrayOfObj);
+        travelTrivia.buttonChoices.css('pointer-events', 'initial');
 
         // $('.answerButtons').attr('disabled', 'false');
     })
@@ -90,7 +91,8 @@ travelTrivia.fiftyFiftyButton = function (rightAnswer, wrongAnswers) {
     $('#fiftyFifty').off().on('click', function(){
         $('#fiftyFifty')
         .fadeTo(500, 0.2)
-        .attr('disabled', 'true');
+        .attr('disabled', 'true')
+        .css('pointer-events', 'none');
     wrongAnswers.sort(function() { 
         return Math.floor(3 * Math.random()) 
     });
@@ -99,6 +101,7 @@ travelTrivia.fiftyFiftyButton = function (rightAnswer, wrongAnswers) {
         if (travelTrivia.buttonChoices[i].value != halfChoices[0] && travelTrivia.buttonChoices[i].value != halfChoices[1]) {
             travelTrivia.buttonChoices[i].setAttribute('disabled', 'true'); 
             travelTrivia.buttonChoices[i].style.opacity = "0.1";
+            travelTrivia.buttonChoices[i].style.pointerEvents = 'none';
             console.log('BREAK');
         }  
     }
@@ -110,7 +113,8 @@ travelTrivia.freePass = function() {
     $('#freePass').off().on('click', function() {
         $('#freePass')
         .fadeTo(500, 0.2)
-        .attr('disabled', 'true');
+        .attr('disabled', 'true')
+        .css('pointer-events', 'none');
         $('.mainGame').fadeTo('slow', 0);
         setTimeout(function() {
             travelTrivia.getData(); 
@@ -121,6 +125,7 @@ travelTrivia.endGame = function(counter, maxQuestions){
     if (counter == maxQuestions - 1){
         $('.modalBox').css('display', 'block');
         $('header').css('display', 'none');
+        $('mainGame').css('display', 'none');
     }
 }
 

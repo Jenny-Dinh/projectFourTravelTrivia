@@ -247,7 +247,7 @@ img {
 }
 
 html {
-  background-color: #333;
+  background-color: #222;
 }
 
 header {
@@ -396,6 +396,7 @@ button:focus {
 main {
   height: 100%;
   position: relative;
+  margin-top: 100px;
   padding-bottom: 100px;
   display: none;
 }
@@ -454,12 +455,6 @@ main {
 
 .answerButtons:hover, .answerButtons:focus {
   border: 3px solid #321AE8;
-}
-
-.answerButtons:hover,
-.answerButtons:focus {
-  background-color: #E9D758;
-  color: black;
 }
 
 .extraButtonsContainer {
