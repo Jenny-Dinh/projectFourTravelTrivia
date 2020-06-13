@@ -1,7 +1,3 @@
-// footer {
-    // background-color: #141301;
-// }
-
 .flexFooter {
     @include gradientBackground;
     @include boxShadow;
@@ -36,19 +32,18 @@
     }
     li {
         list-style-type: none;
+        a {
+            font-size: 2.2rem;
+            color: $btnColor;
+            padding: 0 10px;
+            transition: color 0.4s;
+            &:hover, &:focus {
+            color: $borderColor;
+            } 
+        }
     }
 }
 
-.icon {
-    font-size: 2.2rem;
-    color: $btnColor;
-    padding: 0 10px;
-    transition: color 0.4s;
-}
-.icon:hover,
-.icon:focus {
-    color: $borderColor;
-}
 .devOne,
 .devTwo {
     padding: 20px;

@@ -567,7 +567,7 @@ main {
   list-style-type: none;
 }
 
-.icon {
+.flexFooter li a {
   font-size: 2.2rem;
   color: #B38800;
   padding: 0 10px;
@@ -575,8 +575,7 @@ main {
   transition: color 0.4s;
 }
 
-.icon:hover,
-.icon:focus {
+.flexFooter li a:hover, .flexFooter li a:focus {
   color: #321AE8;
 }
 
