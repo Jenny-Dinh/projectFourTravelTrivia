@@ -37,8 +37,8 @@ main {
   border: 3px solid #E9D758;
   color: $fontColor;
   background: none;
-  padding: 10px 20px;
-  margin-right: 20px;
+  padding: 20px;
+  margin: 10px 0;
   cursor: pointer;
   &:last-of-type {
     margin-right: 0;
@@ -71,10 +71,6 @@ main {
     margin-right: 20px;
   }
 } 
-// .extraButtons:hover,
-// .extraButtons:hover {
-
-// }
 
 .modalBox {
   text-align: center;

@@ -6,6 +6,9 @@ footer {
     justify-content: center;
     align-content: center;
 }
+li {
+    list-style-type: none;
+}
 .icon {
     font-size: 3rem;
     color: $btnColor;
@@ -22,4 +25,11 @@ footer {
 }
 footer p {
     text-align: center;
+}
+a {
+    color: $btnColor;
+}
+a:hover,
+a:focus {
+    color: #fff;
 }

@@ -2,11 +2,6 @@ html    {
     background-color: #39393A;
 }
 
-header {
-    height: 100vh;
-
-}
-
 .heroSection {
     text-align: center;
     border: 40px solid #A49694;
@@ -78,4 +73,8 @@ button {
     --border-colour: $btnColor;
     --border-width: 6px;
     
+}
+button:hover,
+button:focus {
+    text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 20px $assetColor, 0 0 30px $assetColor, 0 0 40px $assetColor, 0 0 60px $assetColor, 0 0 50px $assetColor; 
 }

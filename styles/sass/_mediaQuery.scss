@@ -1,0 +1,32 @@
+//Desktop to Tablet version
+@media only screen and (max-width: 850px) {
+    h1 {
+        font-size: 5.5rem;
+        margin: 0;
+    }
+    .textContainer > span {
+        font-size: 5.5rem;
+    }
+    .question {
+        font-size: 2rem;
+        padding: 10px 100px;
+    }
+    .multipleChoices {
+        padding: 10px 50px;
+    }
+    .answerButtons {
+        font-size: 1rem;
+        padding: 10px 20px;
+        margin-right: 0px;
+    }
+}
+
+//smaller tablet version
+@media only screen and (max-width: 550px) {
+
+}
+
+//Tablet to mobile
+@media only screen and (max-width: 350px) {
+
+}
