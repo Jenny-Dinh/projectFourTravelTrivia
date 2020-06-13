@@ -4,6 +4,7 @@ travelTrivia.url = 'https://opentdb.com/api.php';
 travelTrivia.buttonChoices = $('.answerButtons');
 travelTrivia.counter = 0;
 travelTrivia.maxQuestions = 10;
+travelTrivia.timer = 0;
 
 travelTrivia.startGame = function() {
     $("#startBtn").on('click', function() {
@@ -33,9 +34,8 @@ travelTrivia.getData = function() {
         travelTrivia.freePass();
         travelTrivia.displayQuestion(arrayOfObj);
         travelTrivia.displayChoices(arrayOfObj);
+        travelTrivia.clockTimer();
         travelTrivia.buttonChoices.css('pointer-events', 'initial');
-
-        // $('.answerButtons').attr('disabled', 'false');
     })
 }
 
@@ -62,10 +62,20 @@ travelTrivia.displayChoices  = function(array) {
     console.log(rightAnswer);
 }
 
+//timer countdown or question to be answered
+travelTrivia.clockTimer = function () {
+    let count = 60;
+    travelTrivia.timer = setInterval(function() {
+        $("#countTimer").html(count--);
+        if(count == -1) clearInterval(travelTrivia.timer);
+    }, 1000);
+}
+
 // check if asnwer is correct or incorrect on button click
 travelTrivia.rightOrWrong = function (correctAnswer) {
     travelTrivia.buttonChoices.off().on('click', function() {
         const buttonVal = $(this).val();
+        clearInterval(travelTrivia.timer);
         if (buttonVal !== correctAnswer){
             swal({
                 title: "Sorry Buddy",
@@ -102,7 +112,6 @@ travelTrivia.fiftyFiftyButton = function (rightAnswer, wrongAnswers) {
             travelTrivia.buttonChoices[i].setAttribute('disabled', 'true'); 
             travelTrivia.buttonChoices[i].style.opacity = "0.1";
             travelTrivia.buttonChoices[i].style.pointerEvents = 'none';
-            console.log('BREAK');
         }  
     }
     })
