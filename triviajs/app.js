@@ -7,7 +7,7 @@ travelTrivia.counter = 0;
 travelTrivia.startGame = function() {
     $("#startBtn").on('click', function() {
         travelTrivia.getData();
-        $('main').fadeTo(500, 1);
+        $('main').css('display', 'block');
         $([document.documentElement, document.body]).animate({
             scrollTop: $("main").offset().top
         }, 800);
@@ -36,7 +36,6 @@ travelTrivia.getData = function() {
 
 // display question on the page  
 travelTrivia.displayQuestion = function(array) {
-    $('.question p').fadeTo('2000', 1);
     const question = array['question'];
     $('.question').html(`
     <p>${question}</p>`);
@@ -55,11 +54,10 @@ travelTrivia.displayChoices  = function(array) {
     console.log(rightAnswer);
 }
 
-//Display incorrect/correct answer 
+// check if asnwer is correct or incorrect on button click
 travelTrivia.rightOrWrong = function (correctAnswer) {
     travelTrivia.buttonChoices.off().on('click', function() {
         const buttonVal = $(this).val();
-        console.log('button value:', buttonVal);
         if (buttonVal !== correctAnswer){
             Swal.fire({
                 icon: 'error',
@@ -69,21 +67,23 @@ travelTrivia.rightOrWrong = function (correctAnswer) {
         } else {
             //will use this to implement maxQuestions of 10
             travelTrivia.counter++;
-            $('.question p').css('opacity', 0);
             $('.mainGame').fadeOut('slow');
-            travelTrivia.getData(); 
+            setTimeout(function() {
+                travelTrivia.getData(); 
+            }, 900);
         }
     });
 }
-
+// let player move on to the next question without answering current question
 travelTrivia.freePass = function() {
-    $('#freePass').on('click', function() {
+    $('#freePass').off().on('click', function() {
         $('#freePass')
         .fadeTo(500, 0.2)
         .attr('disabled', 'true');
-        $('.question p').fadeTo('slow', 0);
         $('.mainGame').fadeOut('slow');
-        travelTrivia.getData();
+        setTimeout(function() {
+            travelTrivia.getData(); 
+        }, 900);
     })
 }
 
