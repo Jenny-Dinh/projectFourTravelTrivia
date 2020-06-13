@@ -378,6 +378,7 @@ button {
 main {
   height: 100vh;
   position: relative;
+  display: none;
 }
 
 .borderBlue {

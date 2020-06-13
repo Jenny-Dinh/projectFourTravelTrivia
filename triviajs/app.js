@@ -1,15 +1,16 @@
 const travelTrivia = {};
+
 travelTrivia.url = 'https://opentdb.com/api.php';
 travelTrivia.buttonChoices = $('.answerButtons');
 travelTrivia.counter = 0;
-let rightAnswer;
-
 
 travelTrivia.startGame = function() {
     $("#startBtn").on('click', function() {
+        travelTrivia.getData();
+        $('main').css('display', 'block');
         $([document.documentElement, document.body]).animate({
             scrollTop: $("main").offset().top
-        }, 500);
+        }, 800);
     });
 }
 
@@ -25,12 +26,11 @@ travelTrivia.getData = function() {
             type: 'multiple'
         }
      }).then( function (arrayOfData) {
-         $('.mainGame').fadeIn(2000, function(){
-            arrayOfObj = arrayOfData.results[0];
-            travelTrivia.displayQuestion(arrayOfObj);
-            travelTrivia.displayChoices(arrayOfObj);
-            travelTrivia.freePass();
-         });    
+        arrayOfObj = arrayOfData.results[0];
+        $('.mainGame').fadeIn(2000);
+        travelTrivia.freePass();
+        travelTrivia.displayQuestion(arrayOfObj);
+        travelTrivia.displayChoices(arrayOfObj);
     })
 }
 
@@ -43,21 +43,22 @@ travelTrivia.displayQuestion = function(array) {
 
 // display answers randomly
 travelTrivia.displayChoices  = function(array) {
-    rightAnswer = array['correct_answer'];
-    const wrongAnswers = array['incorrect_answers'];
-    const answers = [rightAnswer, ...wrongAnswers];
+    let rightAnswer = array['correct_answer'];
+    let wrongAnswers = array['incorrect_answers'];
+    let answers = [rightAnswer, ...wrongAnswers];
     answers.sort(function() { return Math.floor(4*Math.random()) });
     for (let i = 0; i <  answers.length; i++ ) {
         travelTrivia.buttonChoices[i].value = answers[i];
     }
-    //debugging purposes only
+    travelTrivia.rightOrWrong(rightAnswer);
     console.log(rightAnswer);
 }
 
-//Display incorrect/correct answer 
-travelTrivia.rightOrWrong = function () {
-    $('.answerButtons').on('click', function() {
-        if ($(this).val() != rightAnswer){
+// check if asnwer is correct or incorrect on button click
+travelTrivia.rightOrWrong = function (correctAnswer) {
+    travelTrivia.buttonChoices.off().on('click', function() {
+        const buttonVal = $(this).val();
+        if (buttonVal !== correctAnswer){
             Swal.fire({
                 icon: 'error',
                 title: 'Too Bad!',
@@ -66,27 +67,29 @@ travelTrivia.rightOrWrong = function () {
         } else {
             //will use this to implement maxQuestions of 10
             travelTrivia.counter++;
-            $('.mainGame').fadeOut('slow', function(){
+            $('.mainGame').fadeOut('slow');
+            setTimeout(function() {
                 travelTrivia.getData(); 
-            });
+            }, 900);
         }
     });
 }
-
+// let player move on to the next question without answering current question
 travelTrivia.freePass = function() {
-    $('#freePass').on('click', function() {
-        $('#freePass').attr('disabled', 'true');
-        travelTrivia.getData();
-        travelTrivia.displayQuestion(arrayOfObj);
+    $('#freePass').off().on('click', function() {
+        $('#freePass')
+        .fadeTo(500, 0.2)
+        .attr('disabled', 'true');
+        $('.mainGame').fadeOut('slow');
+        setTimeout(function() {
+            travelTrivia.getData(); 
+        }, 900);
     })
 }
 
 //initalizating 
 travelTrivia.init = function() {
-    travelTrivia.getData();
-    travelTrivia.startGame();
-    travelTrivia.rightOrWrong(); 
-    
+    travelTrivia.startGame();    
 }
 
 $(document).ready(function(){
