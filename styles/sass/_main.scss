@@ -44,6 +44,11 @@ main {
     margin-right: 0;
   }
 }
+.answerButtons:hover,
+.answerButtons:focus {
+  background-color: #E9D758;
+  color: black;
+}
 
 .extraButtonsContainer {
   margin-top: 20px;
@@ -66,6 +71,10 @@ main {
     margin-right: 20px;
   }
 } 
+// .extraButtons:hover,
+// .extraButtons:hover {
+
+// }
 
 .modalBox {
   text-align: center;

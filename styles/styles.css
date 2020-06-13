@@ -424,6 +424,12 @@ main {
   margin-right: 0;
 }
 
+.answerButtons:hover,
+.answerButtons:focus {
+  background-color: #E9D758;
+  color: black;
+}
+
 .extraButtonsContainer {
   margin-top: 20px;
 }
