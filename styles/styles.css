@@ -456,6 +456,12 @@ main {
   border: 3px solid #321AE8;
 }
 
+.answerButtons:hover,
+.answerButtons:focus {
+  background-color: #E9D758;
+  color: black;
+}
+
 .extraButtonsContainer {
   margin-top: 20px;
   -ms-flex-preferred-size: 100%;
