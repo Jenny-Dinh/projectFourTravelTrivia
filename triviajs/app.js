@@ -13,7 +13,8 @@ travelTrivia.startGame = function() {
         .fadeTo('slow', 0);
         $('.difficulty')
         .fadeTo('slow', 1)
-        .css('z-index', 10);   
+        .css('z-index', 10);  
+    }) 
 }
 
 travelTrivia.chooseDifficulty = function() {
