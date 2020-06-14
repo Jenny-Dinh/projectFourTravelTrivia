@@ -4,7 +4,7 @@ travelTrivia.url = 'https://opentdb.com/api.php';
 travelTrivia.buttonChoices = $('.answerButtons');
 travelTrivia.counter = 0;
 travelTrivia.maxQuestions = 10;
-travelTrivia.timer = 0;
+// travelTrivia.timer = 0;
 
 travelTrivia.startGame = function() {
     $("#startBtn").on('click', function() {
@@ -36,7 +36,7 @@ travelTrivia.getData = function() {
         travelTrivia.freePass();
         travelTrivia.displayQuestion(arrayOfObj);
         travelTrivia.displayChoices(arrayOfObj);
-        // travelTrivia.clockTimer();
+        travelTrivia.clockTimer();
         travelTrivia.buttonChoices.css('pointer-events', 'initial');
         } else {
             travelTrivia.endGame(); 
@@ -61,7 +61,7 @@ travelTrivia.displayChoices  = function(array) {
         travelTrivia.buttonChoices[i].removeAttribute('disabled'); 
         travelTrivia.buttonChoices[i].style.opacity = "1.0";
     }
-    travelTrivia.clockTimer();
+    // travelTrivia.clockTimer();
     travelTrivia.rightOrWrong(rightAnswer);
     travelTrivia.fiftyFiftyButton(rightAnswer, wrongAnswers);
     console.log(rightAnswer);
@@ -69,10 +69,21 @@ travelTrivia.displayChoices  = function(array) {
 
 //timer countdown or question to be answered
 travelTrivia.clockTimer = function () {
-    let count = 10;
-    travelTrivia.timer = setInterval(function() {
-        $("#countTimer").html(count--);
-        if(count == -1) clearInterval(travelTrivia.timer);
+    let count = 60;
+    let timer = setInterval(function() {
+        console.log(count);
+        count--;
+        // $('#countTimer').empty();
+        $("#countTimer").html(count);
+        if(count == -1) {
+            clearInterval(timer);
+            $('.restart')
+            .css('z-index', 10)
+            .fadeTo(500, 1);
+            $('.mainGame').fadeTo('fast', 0.1);
+        } else {
+            clearInterval(timer);
+        }
     }, 1000);
 }
 
