@@ -252,6 +252,7 @@ html {
 
 header {
   height: 100vh;
+  position: relative;
 }
 
 .heroSection {
@@ -401,6 +402,27 @@ button a {
 button:hover,
 button:focus {
   text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 20px #A49694, 0 0 30px #A49694, 0 0 40px #A49694, 0 0 60px #A49694, 0 0 50px #A49694;
+}
+
+.difficulty {
+  position: absolute;
+  display: inline-block;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  z-index: -1;
+  opacity: 0;
+}
+
+.difficulty .difficultyBtn {
+  display: block;
+  margin: 0 auto;
+  margin-bottom: 25px;
+}
+
+.difficulty .difficultyBtn:last-of-type {
+  margin-bottom: 0;
 }
 
 main {
