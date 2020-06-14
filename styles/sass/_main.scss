@@ -107,6 +107,22 @@ main {
     border: 3px solid $borderColor;
   }
 } 
+.correct {
+  width: 200px;
+  margin: 0 auto;
+  font: 700 2rem 'Roboto', sans-serif;
+  border: 5px solid $borderColor;
+  display: none;
+}
+.swal-modal {
+  background: linear-gradient(-45deg, $btnColor, #347708, #23a6d5, $borderColor);
+  font-family: 'Bungee Inline', cursive;
+    .swal-title,
+    .swal-text {
+      font-size: 3rem;
+    }
+}
+
 
 .modalBox {
   @include boxShadow;

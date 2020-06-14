@@ -541,6 +541,24 @@ main {
   border: 3px solid #321AE8;
 }
 
+.correct {
+  width: 200px;
+  margin: 0 auto;
+  font: 700 2rem 'Roboto', sans-serif;
+  border: 5px solid #321AE8;
+  display: none;
+}
+
+.swal-modal {
+  background: linear-gradient(-45deg, #B38800, #347708, #23a6d5, #321AE8);
+  font-family: 'Bungee Inline', cursive;
+}
+
+.swal-modal .swal-title,
+.swal-modal .swal-text {
+  font-size: 3rem;
+}
+
 .modalBox {
   -webkit-box-shadow: -40px 40px 30px #111;
           box-shadow: -40px 40px 30px #111;
@@ -682,8 +700,6 @@ main {
   }
   .answerButtons {
     font-size: 1rem;
-    padding: 10px 20px;
-    margin-right: 0px;
   }
   .modalBox > p {
     font-size: 2.5rem;
@@ -701,10 +717,14 @@ main {
   .question {
     font-size: 1.3rem;
   }
+  .answerButtons {
+    font-size: 0.6rem;
+    padding: 10px 5px;
+  }
   .extraButtons {
-    width: 80px;
-    height: 80px;
-    font-size: 0.7rem;
+    width: 60px;
+    height: 60px;
+    font-size: 0.5rem;
   }
 }
 

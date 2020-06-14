@@ -20,8 +20,6 @@
     }
     .answerButtons {
         font-size: 1rem;
-        padding: 10px 20px;
-        margin-right: 0px;
     }
     .modalBox > p {
         font-size: 2.5rem;
@@ -41,10 +39,14 @@
     .question {
         font-size: 1.3rem;
     }
+    .answerButtons{
+        font-size: 0.6rem;
+        padding: 10px 5px;
+    }
     .extraButtons {
-        width: 80px;
-        height: 80px;
-        font-size: 0.7rem;
+        width: 60px;
+        height: 60px;
+        font-size: 0.5rem;
     }
 }
 

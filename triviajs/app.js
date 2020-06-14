@@ -83,7 +83,7 @@ travelTrivia.rightOrWrong = function (correctAnswer) {
         clearInterval(travelTrivia.timer);
         if (buttonVal !== correctAnswer){
             swal({
-                title: "Sorry Buddy",
+                title: "Sorry Friend",
                 text: "You didn't win.",
                 button: "Play Again",
               }).then(function(){ 
