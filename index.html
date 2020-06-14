@@ -30,7 +30,7 @@
     <main>
       <div class="restart">
         <p>Times up! Maybe next time.</p>
-        <button type="button" class="playAgain">Play again</button>
+        <button type="button" class="playAgain"><a href="index.html">Play again</a></button>
       </div>
       <div class="mainGame">
         <div class="question borderBlue">
@@ -46,6 +46,7 @@
             <input type="button" class="answerButtons" data-number"3" value="">
             <input type="button" class="answerButtons" data-number"4" value="">
           </div>
+          <div class="correct">Correct!</div>
           <div class="extraButtonsContainer">
             <input type="button" class="extraButtons" id="fiftyFifty" value="50/50">
             <input type="button" class="extraButtons" id="freePass" value="Free Pass">
@@ -55,6 +56,7 @@
       <section class="modalBox borderBlue">
         <img src="./images/champion.svg" alt="">
         <p>Congratulations!</p>
+        <button id="restartBtn"><a href="index.html">Restart</a></button>
       </section>
     </main>
     <footer>
