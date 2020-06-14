@@ -4,7 +4,7 @@ travelTrivia.url = 'https://opentdb.com/api.php';
 travelTrivia.buttonChoices = $('.answerButtons');
 travelTrivia.counter = 0;
 travelTrivia.maxQuestions = 10;
-// travelTrivia.timer = 0;
+travelTrivia.timer;
 
 travelTrivia.startGame = function() {
     $("#startBtn").on('click', function() {
@@ -32,11 +32,12 @@ travelTrivia.getData = function() {
         travelTrivia.counter++;
         if (travelTrivia.counter !== travelTrivia.maxQuestions + 1) {
         $('.mainGame').fadeTo(2000, 1);
+        clearInterval(travelTrivia.timer);
+        travelTrivia.clockTimer();
         travelTrivia.fiftyFiftyButton();
         travelTrivia.freePass();
         travelTrivia.displayQuestion(arrayOfObj);
         travelTrivia.displayChoices(arrayOfObj);
-        travelTrivia.clockTimer();
         travelTrivia.buttonChoices.css('pointer-events', 'initial');
         } else {
             travelTrivia.endGame(); 
@@ -69,21 +70,18 @@ travelTrivia.displayChoices  = function(array) {
 
 //timer countdown or question to be answered
 travelTrivia.clockTimer = function () {
-    let count = 60;
-    let timer = setInterval(function() {
+    let count = 5;
+     travelTrivia.timer = setInterval(function() {
         console.log(count);
         count--;
-        // $('#countTimer').empty();
         $("#countTimer").html(count);
-        if(count == -1) {
-            clearInterval(timer);
+        if (count == 0) {
+            clearInterval(travelTrivia.timer);
             $('.restart')
             .css('z-index', 10)
             .fadeTo(500, 1);
             $('.mainGame').fadeTo('fast', 0.1);
-        } else {
-            clearInterval(timer);
-        }
+        } 
     }, 1000);
 }
 
@@ -91,7 +89,6 @@ travelTrivia.clockTimer = function () {
 travelTrivia.rightOrWrong = function (correctAnswer) {
     travelTrivia.buttonChoices.off().on('click', function() {
         const buttonVal = $(this).val();
-        clearInterval(travelTrivia.timer);
         if (buttonVal !== correctAnswer){
             swal({
                 title: "Sorry Buddy",
@@ -102,7 +99,6 @@ travelTrivia.rightOrWrong = function (correctAnswer) {
                 }
              );
         } else {
-            //will use this to implement maxQuestions of 10
             $('.mainGame').fadeTo('slow', 0);
             setTimeout(function() {
                 travelTrivia.getData(); 
@@ -134,6 +130,7 @@ travelTrivia.fiftyFiftyButton = function (rightAnswer, wrongAnswers) {
 // let player move on to the next question without answering current question
 travelTrivia.freePass = function() {
     $('#freePass').off().on('click', function() {
+        // clearInterval(travelTrivia.timer);
         $('#freePass')
         .fadeTo(500, 0.2)
         .attr('disabled', 'true')
