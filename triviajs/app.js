@@ -171,6 +171,7 @@ travelTrivia.playAgain = function() {
         $('#fiftyFifty, #freePass')
         .css({'opacity': 1, 'pointer-events': 'initial'})
         .removeAttr('disabled');
+        travelTrivia.counter = 0;
     })
 }
 
