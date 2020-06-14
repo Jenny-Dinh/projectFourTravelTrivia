@@ -4,7 +4,7 @@ travelTrivia.url = 'https://opentdb.com/api.php';
 travelTrivia.buttonChoices = $('.answerButtons');
 travelTrivia.counter = 0;
 travelTrivia.maxQuestions = 10;
-travelTrivia.timer = 0;
+travelTrivia.timer;
 
 travelTrivia.startGame = function() {
     $("#startBtn").on('click', function() {
@@ -32,11 +32,11 @@ travelTrivia.getData = function() {
         travelTrivia.counter++;
         if (travelTrivia.counter !== travelTrivia.maxQuestions + 1) {
         $('.mainGame').fadeTo(2000, 1);
+        travelTrivia.clockTimer();
         travelTrivia.fiftyFiftyButton();
         travelTrivia.freePass();
         travelTrivia.displayQuestion(arrayOfObj);
         travelTrivia.displayChoices(arrayOfObj);
-        // travelTrivia.clockTimer();
         travelTrivia.buttonChoices.css('pointer-events', 'initial');
         } else {
             travelTrivia.endGame(); 
@@ -61,7 +61,6 @@ travelTrivia.displayChoices  = function(array) {
         travelTrivia.buttonChoices[i].removeAttribute('disabled'); 
         travelTrivia.buttonChoices[i].style.opacity = "1.0";
     }
-    travelTrivia.clockTimer();
     travelTrivia.rightOrWrong(rightAnswer);
     travelTrivia.fiftyFiftyButton(rightAnswer, wrongAnswers);
     console.log(rightAnswer);
@@ -69,34 +68,43 @@ travelTrivia.displayChoices  = function(array) {
 
 //timer countdown or question to be answered
 travelTrivia.clockTimer = function () {
-    let count = 10;
-    travelTrivia.timer = setInterval(function() {
-        $("#countTimer").html(count--);
-        if(count == -1) clearInterval(travelTrivia.timer);
+    let count = 60;
+     travelTrivia.timer = setInterval(function() {
+        console.log(count);
+        count--;
+        $("#countTimer").html(count);
+        if (count == 0) {
+            clearInterval(travelTrivia.timer);
+            $('.restart')
+            .css('z-index', 10)
+            .fadeTo(500, 1);
+            $('.mainGame').fadeTo('fast', 0.1);
+        } 
+        travelTrivia.playAgain();
     }, 1000);
 }
 
-// check if asnwer is correct or incorrect on button click
+// check if answer is correct or incorrect on button click
 travelTrivia.rightOrWrong = function (correctAnswer) {
     travelTrivia.buttonChoices.off().on('click', function() {
         const buttonVal = $(this).val();
-        clearInterval(travelTrivia.timer);
         if (buttonVal !== correctAnswer){
             swal({
                 title: "Sorry Buddy",
                 text: "You didn't win.",
                 button: "Play Again",
               }).then(function(){ 
-                location.reload();
+                  location.reload();
                 }
              );
         } else {
-            //will use this to implement maxQuestions of 10
             $('.mainGame').fadeTo('slow', 0);
             setTimeout(function() {
                 travelTrivia.getData(); 
             }, 900);   
         }
+        clearInterval(travelTrivia.timer);
+        $("#countTimer").html('60');
     });
 }
 //50/50 button to disappear two incorrect answers
@@ -123,6 +131,8 @@ travelTrivia.fiftyFiftyButton = function (rightAnswer, wrongAnswers) {
 // let player move on to the next question without answering current question
 travelTrivia.freePass = function() {
     $('#freePass').off().on('click', function() {
+        clearInterval(travelTrivia.timer);
+        $("#countTimer").html('60');
         $('#freePass')
         .fadeTo(500, 0.2)
         .attr('disabled', 'true')
@@ -134,17 +144,34 @@ travelTrivia.freePass = function() {
     })
 }
 
+// scroll to top of the page, n is vertical position of scrollbar in px
 travelTrivia.scrollToTop = function(n) { 
     $(window).scrollTop(n); 
 } 
 
 travelTrivia.endGame = function() {
-    travelTrivia.scrollToTop(80);
+    clearInterval(travelTrivia.timer);
+    $("#countTimer").html('60');
+    $('main').css('margin-bottom', 50);
+    travelTrivia.scrollToTop(1);
     $('.mainGame').fadeTo('fast', 0);
     $('.modalBox')
     .css('z-index', 10)
     .fadeTo('slow', 1);
     $('header').css('display', 'none');
+}
+
+travelTrivia.playAgain = function() {
+    $('.playAgain').on('click', function() {
+        travelTrivia.scrollToTop(0);
+        $('main').css('display', 'none');
+        $('.restart')
+        .css('z-index', -1)
+        .fadeTo('fast', 0);
+        $('#fiftyFifty, #freePass')
+        .css({'opacity': 1, 'pointer-events': 'initial'})
+        .removeAttr('disabled');
+    })
 }
 
 //initalizating 
