@@ -5,18 +5,42 @@ travelTrivia.buttonChoices = $('.answerButtons');
 travelTrivia.counter = 0;
 travelTrivia.maxQuestions = 10;
 travelTrivia.timer;
+travelTrivia.chosenDifficulty;
 
 travelTrivia.startGame = function() {
     $("#startBtn").on('click', function() {
-        travelTrivia.getData();
+        $('h1, .textContainer, #startBtn')
+        .css('visibility', 'hidden')
+        .fadeTo('slow', 0);
+        $('.difficulty')
+        .fadeTo('slow', 1)
+        .css('z-index', 10);
+    });
+}
+
+travelTrivia.chooseDifficulty = function() {
+    $('.difficultyBtn').on('click', function() {
+        let difficulty = $(this).text().toLowerCase();
+        return difficulty;
+    })
+}
+
+travelTrivia.displayMainGame = function() {
+    $('.difficultyBtn').on('click', function() {
         $('main').css('display', 'block');
         $([document.documentElement, document.body]).animate({
             scrollTop: $("main").offset().top
         }, 800);
-    });
+        $('h1, .textContainer, #startBtn')
+        .css('visibility', 'initial')
+        .fadeTo('slow', 1);
+        $('.difficulty')
+        .fadeTo('slow', 0)
+        .css('z-index', -1);
+    })
 }
 
-travelTrivia.getData = function() {
+travelTrivia.getData = function(chosenDifficulty) {
     $.ajax({
         url: travelTrivia.url,
         method: 'GET',
@@ -24,7 +48,7 @@ travelTrivia.getData = function() {
         data: {
             amount: 1,
             category: 22,
-            difficulty: 'hard',
+            difficulty: chosenDifficulty,
             type: 'multiple'
         }
      }).then( function (arrayOfData) {
@@ -100,7 +124,7 @@ travelTrivia.rightOrWrong = function (correctAnswer) {
         } else {
             $('.mainGame').fadeTo('slow', 0);
             setTimeout(function() {
-                travelTrivia.getData(); 
+                travelTrivia.getData(travelTrivia.chooseDifficulty()); 
             }, 900);   
         }
         clearInterval(travelTrivia.timer);
@@ -139,7 +163,7 @@ travelTrivia.freePass = function() {
         .css('pointer-events', 'none');
         $('.mainGame').fadeTo('slow', 0);
         setTimeout(function() {
-            travelTrivia.getData(); 
+            travelTrivia.getData(travelTrivia.chooseDifficulty()); 
         }, 900);
     })
 }
@@ -177,7 +201,10 @@ travelTrivia.playAgain = function() {
 
 //initalizating 
 travelTrivia.init = function() {
-    travelTrivia.startGame();          
+    travelTrivia.startGame();   
+    travelTrivia.displayMainGame();
+    
+    console.log(travelTrivia.chooseDifficulty());
 }
 
 $(document).ready(function(){
