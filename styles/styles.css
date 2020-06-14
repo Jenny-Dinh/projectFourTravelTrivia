@@ -556,11 +556,12 @@ main {
 }
 
 .correct {
-  width: 200px;
-  margin: 0 auto;
-  font: 700 2rem 'Roboto', sans-serif;
-  border: 5px solid #321AE8;
-  display: none;
+  font: 900 3rem 'Roboto', sans-serif;
+  color: #fff;
+  overflow: hidden;
+  position: relative;
+  padding-left: 0.5rem;
+  top: 20px;
 }
 
 .swal-modal {
@@ -716,7 +717,7 @@ main {
     font-size: 1rem;
   }
   .modalBox > p {
-    font-size: 2.5rem;
+    font-size: 3rem;
   }
 }
 

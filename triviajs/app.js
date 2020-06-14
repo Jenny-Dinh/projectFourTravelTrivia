@@ -32,7 +32,8 @@ travelTrivia.getData = function() {
         arrayOfObj = arrayOfData.results[0];
         travelTrivia.counter++;
         if (travelTrivia.counter !== travelTrivia.maxQuestions + 1) {
-        $('.mainGame').fadeTo(2000, 1);
+        $('.mainGame').fadeTo(2200, 1);
+        $('.correct').css('display', 'none');
         travelTrivia.clockTimer();
         travelTrivia.fiftyFiftyButton();
         travelTrivia.freePass();
@@ -99,6 +100,7 @@ travelTrivia.rightOrWrong = function (correctAnswer) {
                 }
              );
         } else {
+            $('.correct').css('display', 'block');
             $('.mainGame').fadeTo('slow', 0);
             setTimeout(function() {
                 travelTrivia.getData(); 
