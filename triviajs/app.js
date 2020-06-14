@@ -5,7 +5,6 @@ travelTrivia.buttonChoices = $('.answerButtons');
 travelTrivia.counter = 0;
 travelTrivia.maxQuestions = 10;
 travelTrivia.timer;
-travelTrivia.chosenDifficulty;
 
 travelTrivia.startGame = function() {
     $("#startBtn").on('click', function() {
@@ -21,23 +20,23 @@ travelTrivia.startGame = function() {
 travelTrivia.chooseDifficulty = function() {
     $('.difficultyBtn').on('click', function() {
         let difficulty = $(this).text().toLowerCase();
-        return difficulty;
+        travelTrivia.difficulty = difficulty;
+        travelTrivia.displayMainGame();
+        travelTrivia.getData(difficulty);
     })
 }
 
 travelTrivia.displayMainGame = function() {
-    $('.difficultyBtn').on('click', function() {
-        $('main').css('display', 'block');
-        $([document.documentElement, document.body]).animate({
-            scrollTop: $("main").offset().top
-        }, 800);
-        $('h1, .textContainer, #startBtn')
-        .css('visibility', 'initial')
-        .fadeTo('slow', 1);
-        $('.difficulty')
-        .fadeTo('slow', 0)
-        .css('z-index', -1);
-    })
+    $('main').css('display', 'block');
+    $([document.documentElement, document.body]).animate({
+        scrollTop: $("main").offset().top
+    }, 800);
+    $('h1, .textContainer, #startBtn')
+    .css('visibility', 'initial')
+    .fadeTo('slow', 1);
+    $('.difficulty')
+    .fadeTo('slow', 0)
+    .css('z-index', -1);
 }
 
 travelTrivia.getData = function(chosenDifficulty) {
@@ -94,7 +93,6 @@ travelTrivia.displayChoices  = function(array) {
 travelTrivia.clockTimer = function () {
     let count = 60;
      travelTrivia.timer = setInterval(function() {
-        console.log(count);
         count--;
         $("#countTimer").html(count);
         if (count == 0) {
@@ -124,7 +122,7 @@ travelTrivia.rightOrWrong = function (correctAnswer) {
         } else {
             $('.mainGame').fadeTo('slow', 0);
             setTimeout(function() {
-                travelTrivia.getData(travelTrivia.chooseDifficulty()); 
+                travelTrivia.getData(travelTrivia.difficulty); 
             }, 900);   
         }
         clearInterval(travelTrivia.timer);
@@ -163,7 +161,7 @@ travelTrivia.freePass = function() {
         .css('pointer-events', 'none');
         $('.mainGame').fadeTo('slow', 0);
         setTimeout(function() {
-            travelTrivia.getData(travelTrivia.chooseDifficulty()); 
+            travelTrivia.getData(travelTrivia.difficulty); 
         }, 900);
     })
 }
@@ -202,9 +200,7 @@ travelTrivia.playAgain = function() {
 //initalizating 
 travelTrivia.init = function() {
     travelTrivia.startGame();   
-    travelTrivia.displayMainGame();
-    
-    console.log(travelTrivia.chooseDifficulty());
+    travelTrivia.chooseDifficulty();       
 }
 
 $(document).ready(function(){
