@@ -361,7 +361,7 @@ h1 {
 
 button {
   all: unset;
-  padding: 0.8em 2em;
+  padding: 0.5em 1.2em;
   color: #B38800;
   text-transform: uppercase;
   font: 700 1.4rem 'Roboto', sans-serif;
@@ -675,7 +675,7 @@ main {
 }
 
 .icon {
-  font-size: 2.2rem;
+  font-size: 2rem;
   color: #B38800;
   padding: 0 10px;
   -webkit-transition: color 0.4s;
@@ -689,7 +689,7 @@ main {
 
 .devOne,
 .devTwo {
-  padding: 20px;
+  padding: 10px;
   text-align: center;
 }
 
@@ -721,12 +721,15 @@ main {
 }
 
 @media only screen and (max-width: 550px) {
+  header {
+    height: 70vh;
+  }
   h1 {
-    font-size: 4rem;
+    font-size: 3.5rem;
     margin: 0;
   }
   .textContainer > span {
-    font-size: 4rem;
+    font-size: 3.5rem;
   }
   .question {
     font-size: 1.3rem;
@@ -734,25 +737,40 @@ main {
   .answerButtons {
     font-size: 0.6rem;
     padding: 10px 5px;
+    margin: 5px;
   }
   .extraButtons {
     width: 60px;
     height: 60px;
     font-size: 0.5rem;
   }
+  .modalBox img {
+    max-width: 240px;
+  }
+  .modalBox p {
+    font-size: 1.8rem;
+  }
+  .restart {
+    width: 300px;
+    height: 300px;
+  }
 }
 
 @media only screen and (max-width: 350px) {
+  header {
+    height: 70vh;
+  }
   h1 {
-    font-size: 2.5rem;
+    font-size: 2.2rem;
     margin: 0;
   }
   .textContainer > span {
-    font-size: 2.5rem;
+    font-size: 2.2rem;
   }
   button {
     padding: 0.2;
     font-size: 1rem;
+    margin: 5px;
   }
   .question {
     font-size: 0.7rem;
@@ -763,6 +781,13 @@ main {
   }
   .item .countTimer {
     font-size: 2rem;
+  }
+  .answerButtons {
+    margin: 5px;
+  }
+  .restart {
+    width: 300px;
+    height: 250px;
   }
   .modalBox img {
     max-width: 200px;

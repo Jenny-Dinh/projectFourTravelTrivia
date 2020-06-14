@@ -9,10 +9,11 @@ travelTrivia.timer;
 travelTrivia.startGame = function() {
     $("#startBtn").on('click', function() {
         travelTrivia.getData();
+        $('header').slideUp('slow');
         $('main').css('display', 'block');
-        $([document.documentElement, document.body]).animate({
-            scrollTop: $("main").offset().top
-        }, 800);
+        // $([document.documentElement, document.body]).animate({
+        //     scrollTop: $("main").offset().top
+        // }, 800);
     });
 }
 
@@ -158,7 +159,6 @@ travelTrivia.endGame = function() {
     $('.modalBox')
     .css('z-index', 10)
     .fadeTo('slow', 1);
-    $('header').css('display', 'none');
 }
 
 travelTrivia.playAgain = function() {
