@@ -121,11 +121,11 @@ main {
 } 
 .correct {
   font: 900 3rem 'Roboto', sans-serif;
-  color: #fff;
-  overflow: hidden;
-  position: relative;
-  padding-left: 0.5rem;
-  top: 20px;
+  background-image: linear-gradient(to left, rgb(187, 187, 25), rgb(167, 111, 207), rgb(30, 30, 182));   
+  -webkit-background-clip: text;
+  color: transparent;
+  margin: 0 auto;
+  width: 100%;
 }
 
 .swal-modal {
@@ -156,7 +156,7 @@ main {
     max-width: 300px;
   }
   p {
-    font: 5rem 'Bungee Inline', cursive;
+    font: 6rem 'Bungee Inline', cursive;
     line-height: 0.8;
     margin: 20px 0;
   }

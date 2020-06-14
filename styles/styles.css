@@ -579,11 +579,12 @@ main {
 
 .correct {
   font: 900 3rem 'Roboto', sans-serif;
-  color: #fff;
-  overflow: hidden;
-  position: relative;
-  padding-left: 0.5rem;
-  top: 20px;
+  background-image: -webkit-gradient(linear, right top, left top, from(#bbbb19), color-stop(#a76fcf), to(#1e1eb6));
+  background-image: linear-gradient(to left, #bbbb19, #a76fcf, #1e1eb6);
+  -webkit-background-clip: text;
+  color: transparent;
+  margin: 0 auto;
+  width: 100%;
 }
 
 .swal-modal {
@@ -626,7 +627,7 @@ main {
 }
 
 .modalBox p {
-  font: 5rem 'Bungee Inline', cursive;
+  font: 6rem 'Bungee Inline', cursive;
   line-height: 0.8;
   margin: 20px 0;
 }
@@ -729,14 +730,14 @@ main {
     font-size: 1rem;
   }
   .question {
-    font-size: 2rem;
+    font-size: 2.5rem;
     padding: 10px 100px;
   }
   .multipleChoices {
     padding: 10px 50px;
   }
   .answerButtons {
-    font-size: 1rem;
+    font-size: 1.3rem;
   }
   .modalBox > p {
     font-size: 3rem;
@@ -754,11 +755,21 @@ main {
   .textContainer > span {
     font-size: 3.5rem;
   }
+  .item {
+    width: 60px;
+    height: 60px;
+  }
+  .item .countTimer {
+    font-size: 1.2rem;
+  }
+  .correct {
+    font-size: 2.4rem;
+  }
   .question {
-    font-size: 1.3rem;
+    font-size: 1.8rem;
   }
   .answerButtons {
-    font-size: 0.6rem;
+    font-size: 0.8rem;
     padding: 10px 5px;
     margin: 5px;
   }
@@ -795,15 +806,18 @@ main {
     font-size: 1rem;
     margin: 5px;
   }
-  .question {
-    font-size: 0.7rem;
-  }
   .item {
-    width: 80px;
-    height: 80px;
+    width: 50px;
+    height: 50px;
   }
   .item .countTimer {
+    font-size: 1rem;
+  }
+  .correct {
     font-size: 2rem;
+  }
+  .question {
+    font-size: 1rem;
   }
   .answerButtons {
     margin: 5px;
