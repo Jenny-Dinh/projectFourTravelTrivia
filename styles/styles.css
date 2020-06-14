@@ -464,6 +464,13 @@ main {
   display: none;
 }
 
+.choicesContainer {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 2fr 2fr;
+      grid-template-columns: 2fr 2fr;
+}
+
 .multipleChoices {
   -webkit-box-shadow: -40px 40px 30px #111;
           box-shadow: -40px 40px 30px #111;
@@ -493,7 +500,7 @@ main {
   color: #F2F7F2;
   background: none;
   padding: 10px 20px;
-  margin-bottom: 20px;
+  margin: 20px;
   cursor: pointer;
   -webkit-transition: border 0.4s, color 0.4s;
   transition: border 0.4s, color 0.4s;
@@ -564,7 +571,7 @@ main {
 }
 
 .modalBox p {
-  font: 6rem 'Bungee Inline', cursive;
+  font: 5rem 'Bungee Inline', cursive;
   line-height: 0.8;
   margin: 20px 0;
 }
@@ -678,6 +685,9 @@ main {
     padding: 10px 20px;
     margin-right: 0px;
   }
+  .modalBox > p {
+    font-size: 2.5rem;
+  }
 }
 
 @media only screen and (max-width: 550px) {
@@ -691,8 +701,10 @@ main {
   .question {
     font-size: 1.3rem;
   }
-  .modalBox > p {
-    font-size: 2.5rem;
+  .extraButtons {
+    width: 80px;
+    height: 80px;
+    font-size: 0.7rem;
   }
 }
 
@@ -718,14 +730,11 @@ main {
   .item .countTimer {
     font-size: 2rem;
   }
-  .modalBox {
-    height: 50%;
-  }
   .modalBox img {
     max-width: 200px;
   }
   .modalBox p {
-    font-size: 1.5rem;
+    font-size: 0.2rem;
   }
 }
 

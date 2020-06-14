@@ -23,6 +23,10 @@
         padding: 10px 20px;
         margin-right: 0px;
     }
+    .modalBox > p {
+        font-size: 2.5rem;
+
+    }
 }
 
 //smaller tablet version
@@ -37,9 +41,10 @@
     .question {
         font-size: 1.3rem;
     }
-    .modalBox > p {
-        font-size: 2.5rem;
-
+    .extraButtons {
+        width: 80px;
+        height: 80px;
+        font-size: 0.7rem;
     }
 }
 
@@ -67,13 +72,12 @@
             }
     }
     .modalBox  {
-        height: 50%;
         img {
             max-width: 200px;
         }
 
         p{
-            font-size: 1.5rem;
+            font-size: 0.2rem;
         }
     }
 }

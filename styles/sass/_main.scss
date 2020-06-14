@@ -45,6 +45,10 @@ main {
   width: 400px;
   display: none;
 }
+.choicesContainer {
+  display: grid;
+  grid-template-columns: 2fr 2fr;
+}
 
 .multipleChoices {
   @include boxShadow;
@@ -67,7 +71,7 @@ main {
   color: $fontColor;
   background: none;
   padding: 10px 20px;
-  margin-bottom: 20px;
+  margin: 20px;
   cursor: pointer;
   transition: border 0.4s, color 0.4s;
   &:hover,
@@ -123,7 +127,7 @@ main {
     max-width: 300px;
   }
   p {
-    font: 6rem 'Bungee Inline', cursive;
+    font: 5rem 'Bungee Inline', cursive;
     line-height: 0.8;
     margin: 20px 0;
   }
