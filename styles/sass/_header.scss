@@ -87,6 +87,10 @@ button:focus {
     border: 4px solid $borderColor;
     color: $fontColor;
 }
+button a {
+    text-decoration: none;
+    color: #fff;
+}
 
 :root {
     --background-colour: none;

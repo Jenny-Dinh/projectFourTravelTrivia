@@ -13,8 +13,7 @@ travelTrivia.startGame = function() {
         .fadeTo('slow', 0);
         $('.difficulty')
         .fadeTo('slow', 1)
-        .css('z-index', 10);
-    });
+        .css('z-index', 10);   
 }
 
 travelTrivia.chooseDifficulty = function() {
@@ -112,7 +111,7 @@ travelTrivia.rightOrWrong = function (correctAnswer) {
         const buttonVal = $(this).val();
         if (buttonVal !== correctAnswer){
             swal({
-                title: "Sorry Buddy",
+                title: "Sorry Friend",
                 text: "You didn't win.",
                 button: "Play Again",
               }).then(function(){ 
@@ -180,7 +179,6 @@ travelTrivia.endGame = function() {
     $('.modalBox')
     .css('z-index', 10)
     .fadeTo('slow', 1);
-    $('header').css('display', 'none');
 }
 
 travelTrivia.playAgain = function() {
