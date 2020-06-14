@@ -34,6 +34,13 @@
     .textContainer > span {
         font-size: 4rem;
     }
+    .question {
+        font-size: 1.3rem;
+    }
+    .modalBox > p {
+        font-size: 2.5rem;
+
+    }
 }
 
 //Tablet to mobile
@@ -49,5 +56,25 @@
         padding: 0.2;
         font-size: 1rem;
         }
+    .question {
+        font-size: 0.7rem;
+    }
+    .item {
+        width: 80px;
+        height: 80px;
+            .countTimer {
+                font-size: 2rem;
+            }
+    }
+    .modalBox  {
+        height: 50%;
+        img {
+            max-width: 200px;
+        }
+
+        p{
+            font-size: 1.5rem;
+        }
+    }
 }
 

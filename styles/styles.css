@@ -387,6 +387,11 @@ button:focus {
   color: #F2F7F2;
 }
 
+button a {
+  text-decoration: none;
+  color: #fff;
+}
+
 :root {
   --background-colour: none;
   --border-colour: $btnColor;
@@ -561,7 +566,7 @@ main {
 .modalBox p {
   font: 6rem 'Bungee Inline', cursive;
   line-height: 0.8;
-  margin: 20px 0 0 0;
+  margin: 20px 0;
 }
 
 .flexFooter {
@@ -683,6 +688,12 @@ main {
   .textContainer > span {
     font-size: 4rem;
   }
+  .question {
+    font-size: 1.3rem;
+  }
+  .modalBox > p {
+    font-size: 2.5rem;
+  }
 }
 
 @media only screen and (max-width: 350px) {
@@ -696,6 +707,25 @@ main {
   button {
     padding: 0.2;
     font-size: 1rem;
+  }
+  .question {
+    font-size: 0.7rem;
+  }
+  .item {
+    width: 80px;
+    height: 80px;
+  }
+  .item .countTimer {
+    font-size: 2rem;
+  }
+  .modalBox {
+    height: 50%;
+  }
+  .modalBox img {
+    max-width: 200px;
+  }
+  .modalBox p {
+    font-size: 1.5rem;
   }
 }
 
