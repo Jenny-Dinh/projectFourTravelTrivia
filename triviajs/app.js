@@ -13,7 +13,9 @@ travelTrivia.startGame = function() {
         .fadeTo('slow', 0);
         $('.difficulty')
         .fadeTo('slow', 1)
-        .css('z-index', 10);  
+        .css('z-index', 10); 
+        travelTrivia.getToken();
+        travelTrivia.counter = 0; 
     }) 
 }
 
@@ -39,6 +41,20 @@ travelTrivia.displayMainGame = function() {
     .css('z-index', -1);
 }
 
+travelTrivia.getToken = function() {
+    $.ajax({
+        url: 'https://opentdb.com/api_token.php',
+        type: 'GET',
+        dataType: 'json',
+        data: {
+            command: 'request'
+        },
+        success: function (response) {
+            travelTrivia.token = response.token;
+        }
+    })
+}
+
 travelTrivia.getData = function(chosenDifficulty) {
     $.ajax({
         url: travelTrivia.url,
@@ -46,6 +62,7 @@ travelTrivia.getData = function(chosenDifficulty) {
         dataType: 'json',
         data: {
             amount: 1,
+            token: travelTrivia.token,
             category: 22,
             difficulty: chosenDifficulty,
             type: 'multiple'
@@ -175,7 +192,6 @@ travelTrivia.endGame = function() {
     clearInterval(travelTrivia.timer);
     $("#countTimer").html('60');
     $('main').css('margin-bottom', 50);
-    travelTrivia.scrollToTop(1);
     $('.mainGame').fadeTo('fast', 0);
     $('.modalBox')
     .css('z-index', 10)
@@ -192,7 +208,6 @@ travelTrivia.playAgain = function() {
         $('#fiftyFifty, #freePass')
         .css({'opacity': 1, 'pointer-events': 'initial'})
         .removeAttr('disabled');
-        travelTrivia.counter = 0;
     })
 }
 
