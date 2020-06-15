@@ -29,11 +29,12 @@ travelTrivia.chooseDifficulty = function() {
 }
 
 travelTrivia.displayMainGame = function() {
-    $('main').css('display', 'block');
-    $([document.documentElement, document.body]).animate({
-        scrollTop: $("main").offset().top
-    }, 800);
     $('header').slideUp('slow');
+    $('main').css('display', 'block');
+    // $([document.documentElement, document.body]).animate({
+    //     scrollTop: $("main").offset().top
+    // }, 800);
+    // $('header').slideUp('slow');
     $('.difficulty')
     .fadeTo('slow', 0)
     .css('z-index', -1);
