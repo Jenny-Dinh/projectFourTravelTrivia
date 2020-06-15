@@ -43,6 +43,13 @@ h1 {
       text-shadow: -20px 20px 10px #111;
     }
   }
+  .textContainer > p {
+    font-size: 1.5rem;
+    font-weight: 400;
+    background-image: linear-gradient(to left, rgb(187, 187, 25), rgb(167, 111, 207), rgb(48, 139, 212));   
+    -webkit-background-clip: text;   
+    color: transparent;
+  }
   
   .textContainer > span:nth-child(2) {
       animation-delay: 0.25s;

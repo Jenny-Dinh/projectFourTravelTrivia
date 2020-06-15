@@ -87,7 +87,7 @@ travelTrivia.getData = function(chosenDifficulty) {
 // display question on the page  
 travelTrivia.displayQuestion = function(array) {
     const question = array['question'];
-    $('.question p').text(`${question}`);
+    $('.question p').html(`${question}`);
 }
 
 // display answers randomly
@@ -99,7 +99,7 @@ travelTrivia.displayChoices  = function(array) {
     for (let i = 0; i <  answers.length; i++ ) {
         travelTrivia.buttonChoices[i].value = answers[i];
         travelTrivia.buttonChoices[i].removeAttribute('disabled'); 
-        travelTrivia.buttonChoices[i].style.opacity = "1.0";
+        travelTrivia.buttonChoices[i].style.opacity = "1.0"
     }
     travelTrivia.rightOrWrong(rightAnswer);
     travelTrivia.fiftyFiftyButton(rightAnswer, wrongAnswers);
@@ -137,7 +137,7 @@ travelTrivia.rightOrWrong = function (correctAnswer) {
                 }
              );
         } else {
-            $('.correct').css('display', 'block');
+            $('.correct').fadeIn('slow');
             $('.mainGame').fadeTo('slow', 0);
             setTimeout(function() {
                 travelTrivia.getData(travelTrivia.difficulty); 
