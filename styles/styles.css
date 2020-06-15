@@ -527,14 +527,14 @@ main {
 }
 
 .answerButtons {
-  font: 400 2rem 'Roboto', sans-serif;
+  font: 400 1.3rem 'Roboto', sans-serif;
   letter-spacing: 0.1em;
   text-transform: capitalize;
   border-radius: 8px;
   border: 3px solid #B38800;
   color: #F2F7F2;
   background: none;
-  padding: 20px 40px;
+  padding: 15px 40px;
   margin: 20px;
   cursor: pointer;
   -webkit-transition: border 0.4s, color 0.4s;
@@ -577,7 +577,7 @@ main {
 }
 
 .correct {
-  font: 900 3rem 'Roboto', sans-serif;
+  font: 900 2rem 'Roboto', sans-serif;
   background-image: -webkit-gradient(linear, right top, left top, from(#bbbb19), color-stop(#a76fcf), to(#1e1eb6));
   background-image: linear-gradient(to left, #bbbb19, #a76fcf, #1e1eb6);
   -webkit-background-clip: text;
@@ -585,6 +585,7 @@ main {
   margin: 0 auto;
   width: 100%;
   opacity: 0;
+  letter-spacing: 2px;
 }
 
 .swal-modal {

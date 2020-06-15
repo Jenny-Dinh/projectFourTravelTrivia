@@ -16,6 +16,7 @@ header {
     top: 50%;
     transform: translateY(-50%);
 }
+
 h1 {
     color: $fontColor;
     font-family: 'Bungee Inline', cursive;
@@ -24,6 +25,7 @@ h1 {
     text-shadow: -20px 20px 10px #111;
     letter-spacing: 5px;
 }
+
 .textContainer > span {
     font-family: 'Bungee Inline', cursive;
     font-size: 9rem;
