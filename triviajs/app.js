@@ -14,9 +14,9 @@ travelTrivia.startGame = function() {
         $('.difficulty')
         .fadeTo('slow', 1)
         .css('z-index', 10); 
-        travelTrivia.getToken();  
-        travelTrivia.counter = 0;
-    })
+        travelTrivia.getToken();
+        travelTrivia.counter = 0; 
+    }) 
 }
 
 travelTrivia.chooseDifficulty = function() {
@@ -192,7 +192,6 @@ travelTrivia.endGame = function() {
     clearInterval(travelTrivia.timer);
     $("#countTimer").html('60');
     $('main').css('margin-bottom', 50);
-    // travelTrivia.scrollToTop(1);
     $('.mainGame').fadeTo('fast', 0);
     $('.modalBox')
     .css('z-index', 10)
@@ -209,7 +208,6 @@ travelTrivia.playAgain = function() {
         $('#fiftyFifty, #freePass')
         .css({'opacity': 1, 'pointer-events': 'initial'})
         .removeAttr('disabled');
-        travelTrivia.counter = 0;
     })
 }
 
