@@ -31,9 +31,7 @@ travelTrivia.displayMainGame = function() {
     $([document.documentElement, document.body]).animate({
         scrollTop: $("main").offset().top
     }, 800);
-    $('h1, .textContainer, #startBtn')
-    .css('visibility', 'initial')
-    .fadeTo('slow', 1);
+    $('header').slideUp('slow');
     $('.difficulty')
     .fadeTo('slow', 0)
     .css('z-index', -1);
