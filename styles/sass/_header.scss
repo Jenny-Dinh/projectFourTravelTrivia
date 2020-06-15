@@ -48,7 +48,8 @@ h1 {
   .textContainer > p {
     font-size: 1.5rem;
     font-weight: 400;
-    background-image: linear-gradient(to left, rgb(187, 187, 25), rgb(167, 111, 207), rgb(48, 139, 212));   
+    font-family: 'Poppins', sans-serif;
+    background-image: linear-gradient(to left, rgb(24, 142, 197), rgb(202, 151, 238), rgb(71, 158, 230));   
     -webkit-background-clip: text;   
     color: transparent;
   }
