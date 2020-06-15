@@ -459,10 +459,6 @@ main {
   text-align: center;
 }
 
-.travelQuestion {
-  overflow: hidden;
-}
-
 .item {
   margin: 0 auto 20px auto;
   width: 80px;
@@ -547,8 +543,8 @@ main {
   border: 3px solid #B38800;
   color: #F2F7F2;
   background: none;
-  padding: 10px 20px;
   margin: 20px;
+  padding: 10px 20px;
   cursor: pointer;
   -webkit-transition: border 0.4s, color 0.4s;
   transition: border 0.4s, color 0.4s;

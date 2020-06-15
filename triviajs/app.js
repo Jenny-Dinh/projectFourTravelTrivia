@@ -97,6 +97,7 @@ travelTrivia.displayChoices  = function(array) {
     let answers = [rightAnswer, ...wrongAnswers];
     answers.sort(function() { return Math.floor(4*Math.random()) });
     for (let i = 0; i <  answers.length; i++ ) {
+        answers[i] = travelTrivia.htmlDecode(answers[i]);
         travelTrivia.buttonChoices[i].value = answers[i];
         travelTrivia.buttonChoices[i].removeAttribute('disabled'); 
         travelTrivia.buttonChoices[i].style.opacity = "1.0"
@@ -104,6 +105,10 @@ travelTrivia.displayChoices  = function(array) {
     travelTrivia.rightOrWrong(rightAnswer);
     travelTrivia.fiftyFiftyButton(rightAnswer, wrongAnswers);
     console.log(rightAnswer);
+}
+travelTrivia.htmlDecode = function (input) {
+    let doc = new DOMParser().parseFromString(input, "text/html");
+    return doc.documentElement.textContent;
 }
 
 //timer countdown or question to be answered

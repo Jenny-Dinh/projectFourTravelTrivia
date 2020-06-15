@@ -20,9 +20,6 @@ main {
   margin-bottom: 30px;
   text-align: center;
 }
-.travelQuestion {
-  overflow: hidden;
-}
 
 .item {
   margin: 0 auto 20px auto;
@@ -85,8 +82,8 @@ main {
   border: 3px solid $btnColor;
   color: $fontColor;
   background: none;
-  padding: 10px 20px;
   margin: 20px;
+  padding: 10px 20px;
   cursor: pointer;
   transition: border 0.4s, color 0.4s;
   &:hover,
