@@ -81,7 +81,7 @@ main {
   border: 3px solid $btnColor;
   color: $fontColor;
   background: none;
-  padding: 20px 40px;
+  padding: 10px 20px;
   margin: 20px;
   cursor: pointer;
   transition: border 0.4s, color 0.4s;
@@ -128,11 +128,14 @@ main {
 }
 
 .swal-modal {
+  width: 400px;
+  height: 400px;
   background: linear-gradient(-45deg, $btnColor, #347708, #23a6d5, $borderColor);
   font-family: 'Bungee Inline', cursive;
     .swal-title,
     .swal-text {
       font-size: 3rem;
+      align-items: center;
     }
 }
 

@@ -534,7 +534,7 @@ main {
   border: 3px solid #B38800;
   color: #F2F7F2;
   background: none;
-  padding: 20px 40px;
+  padding: 10px 20px;
   margin: 20px;
   cursor: pointer;
   -webkit-transition: border 0.4s, color 0.4s;
@@ -587,6 +587,8 @@ main {
 }
 
 .swal-modal {
+  width: 400px;
+  height: 400px;
   background: linear-gradient(-45deg, #B38800, #347708, #23a6d5, #321AE8);
   font-family: 'Bungee Inline', cursive;
 }
@@ -594,6 +596,9 @@ main {
 .swal-modal .swal-title,
 .swal-modal .swal-text {
   font-size: 3rem;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 .modalBox {
@@ -629,97 +634,6 @@ main {
   font: 6rem 'Bungee Inline', cursive;
   line-height: 0.8;
   margin: 20px 0;
-}
-
-aside {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-}
-
-.meterBar ul li {
-  list-style-type: none;
-  position: relative;
-  width: 6px;
-  margin: 0 auto;
-  padding-top: 50px;
-  background: #B38800;
-}
-
-.meterBar ul li::after {
-  content: '';
-  position: absolute;
-  left: 50%;
-  bottom: 0;
-  -webkit-transform: translateX(-50%);
-          transform: translateX(-50%);
-  width: 30px;
-  height: 30px;
-  border-radius: 50%;
-  background: inherit;
-}
-
-.meterBar ul li div {
-  position: relative;
-  bottom: 0;
-  width: 400px;
-  padding: 15px;
-}
-
-.meterBar ul li div::before {
-  content: '';
-  position: absolute;
-  bottom: 7px;
-  width: 0;
-  height: 0;
-  border-style: solid;
-}
-
-.meterBar ul li:nth-child(odd) div {
-  left: 45px;
-}
-
-.meterBar ul li:nth-child(odd) div::before {
-  left: -15px;
-  border-width: 8px 16px 8px 0;
-}
-
-.meterBar ul li:nth-child(even) div {
-  left: -439px;
-}
-
-.meterBar ul li:nth-child(even) div::before {
-  right: -15px;
-  border-width: 8px 0 8px 16px;
-}
-
-.meterBar ul li::after {
-  -webkit-transition: background .5s ease-in-out;
-  transition: background .5s ease-in-out;
-}
-
-.meterBar ul li div {
-  visibility: hidden;
-  opacity: 0;
-  -webkit-transition: all .5s ease-in-out;
-  transition: all .5s ease-in-out;
-}
-
-.meterBar ul li:nth-child(odd) div {
-  -webkit-transform: translate3d(200px, 0, 0);
-          transform: translate3d(200px, 0, 0);
-}
-
-.meterBar ul li:nth-child(even) div {
-  -webkit-transform: translate3d(-200px, 0, 0);
-          transform: translate3d(-200px, 0, 0);
-}
-
-.meterBar ul li.in-view div {
-  -webkit-transform: none;
-          transform: none;
-  visibility: visible;
-  opacity: 1;
 }
 
 .flexFooter {
@@ -836,7 +750,7 @@ aside {
 
 @media only screen and (max-width: 550px) {
   header {
-    height: 70vh;
+    height: 90vh;
   }
   h1 {
     font-size: 3rem;
@@ -883,7 +797,7 @@ aside {
 
 @media only screen and (max-width: 350px) {
   header {
-    height: 70vh;
+    height: 90vh;
   }
   h1 {
     font-size: 2.2rem;
