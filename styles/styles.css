@@ -546,7 +546,6 @@ main {
   background: none;
   padding: 15px 40px;
   margin: 20px;
-  padding: 10px 20px;
   cursor: pointer;
   -webkit-transition: border 0.4s, color 0.4s;
   transition: border 0.4s, color 0.4s;
@@ -608,11 +607,7 @@ main {
 
 .swal-modal .swal-title,
 .swal-modal .swal-text {
-  color: white;
   font-size: 3rem;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
 }
 
 .modalBox {
@@ -758,13 +753,13 @@ main {
     font-size: 1.3rem;
   }
   .modalBox > p {
-    font-size: 4rem;
+    font-size: 3rem;
   }
 }
 
 @media only screen and (max-width: 550px) {
   header {
-    height: 90vh;
+    height: 70vh;
   }
   h1 {
     font-size: 3rem;
@@ -801,7 +796,7 @@ main {
     max-width: 240px;
   }
   .modalBox p {
-    font-size: 2rem;
+    font-size: 1.8rem;
   }
   .restart {
     width: 300px;
@@ -811,7 +806,7 @@ main {
 
 @media only screen and (max-width: 350px) {
   header {
-    height: 90vh;
+    height: 70vh;
   }
   h1 {
     font-size: 2.2rem;

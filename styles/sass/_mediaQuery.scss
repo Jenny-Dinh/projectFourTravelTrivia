@@ -22,14 +22,14 @@
         font-size: 1.3rem;
     }
     .modalBox > p {
-        font-size: 4rem;
+        font-size: 3rem;
     }
 }
 
 //smaller tablet version
 @media only screen and (max-width: 550px) {
     header {
-        height: 90vh;
+        height: 70vh;
     }
     h1 {
         font-size: 3rem;
@@ -67,7 +67,7 @@
             max-width: 240px;
         }
         p {
-            font-size: 2rem;
+            font-size: 1.8rem;
         }
         
     }
@@ -80,7 +80,7 @@
 //Tablet to mobile
 @media only screen and (max-width: 350px) {
     header {
-        height: 90vh;
+        height: 70vh;
     }
     h1 {
         font-size: 2.2rem;
