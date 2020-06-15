@@ -1,14 +1,14 @@
 $assetColor: #A49694;
 $fontColor: #F2F7F2;
 $btnColor: #B38800;
-$borderColor: #321AE8;
+$borderColor: #4F86C6;
 
 @mixin startBtn {
     all: unset;
     padding: 0.5em 1.2em;
     color: $btnColor;
     text-transform: uppercase;
-    font: 700 1.4rem 'Roboto', sans-serif;
+    font: 700 1.4rem 'Poppins', sans-serif;
     letter-spacing: 0.15em;
     text-align: center;
     position: relative;

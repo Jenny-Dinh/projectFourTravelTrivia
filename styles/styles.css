@@ -308,6 +308,16 @@ h1 {
   }
 }
 
+.textContainer > p {
+  font-size: 1.5rem;
+  font-weight: 400;
+  font-family: 'Poppins', sans-serif;
+  background-image: -webkit-gradient(linear, right top, left top, from(#188ec5), color-stop(#ca97ee), to(#479ee6));
+  background-image: linear-gradient(to left, #188ec5, #ca97ee, #479ee6);
+  -webkit-background-clip: text;
+  color: transparent;
+}
+
 .textContainer > span:nth-child(2) {
   -webkit-animation-delay: 0.25s;
           animation-delay: 0.25s;
@@ -365,7 +375,7 @@ button {
   padding: 0.5em 1.2em;
   color: #B38800;
   text-transform: uppercase;
-  font: 700 1.4rem 'Roboto', sans-serif;
+  font: 700 1.4rem 'Poppins', sans-serif;
   letter-spacing: 0.15em;
   text-align: center;
   position: relative;
@@ -384,7 +394,7 @@ button {
 
 button:hover,
 button:focus {
-  border: 4px solid #321AE8;
+  border: 4px solid #4F86C6;
   color: #F2F7F2;
 }
 
@@ -434,7 +444,7 @@ main {
 }
 
 .borderBlue {
-  border: 15px solid #321AE8;
+  border: 15px solid #4F86C6;
   border-radius: 20px;
 }
 
@@ -468,7 +478,7 @@ main {
 }
 
 .countTimer {
-  font: 400 2rem 'Roboto', sans-serif;
+  font: 400 2rem 'Poppins', sans-serif;
 }
 
 .restart {
@@ -479,9 +489,9 @@ main {
   text-align: center;
   padding: 20px;
   border: 5px solid transparent;
-  -o-border-image: linear-gradient(to bottom right, #321AE8 0%, #B38800 25%, #321AE8 50%, #B38800 75%, #321AE8 100%);
-     border-image: -webkit-gradient(linear, left top, right bottom, from(#321AE8), color-stop(25%, #B38800), color-stop(50%, #321AE8), color-stop(75%, #B38800), to(#321AE8));
-     border-image: linear-gradient(to bottom right, #321AE8 0%, #B38800 25%, #321AE8 50%, #B38800 75%, #321AE8 100%);
+  -o-border-image: linear-gradient(to bottom right, #4F86C6 0%, #B38800 25%, #4F86C6 50%, #B38800 75%, #4F86C6 100%);
+     border-image: -webkit-gradient(linear, left top, right bottom, from(#4F86C6), color-stop(25%, #B38800), color-stop(50%, #4F86C6), color-stop(75%, #B38800), to(#4F86C6));
+     border-image: linear-gradient(to bottom right, #4F86C6 0%, #B38800 25%, #4F86C6 50%, #B38800 75%, #4F86C6 100%);
   border-image-slice: 1;
   height: 300px;
   margin: 20px auto;
@@ -496,7 +506,7 @@ main {
 }
 
 .restart p {
-  font: 400 1.8rem 'Roboto', sans-serif;
+  font: 400 1.8rem 'Poppins', sans-serif;
   letter-spacing: 2px;
 }
 
@@ -542,7 +552,7 @@ main {
 }
 
 .answerButtons:hover, .answerButtons:focus {
-  border: 3px solid #321AE8;
+  border: 3px solid #4F86C6;
 }
 
 .extraButtonsContainer {
@@ -573,11 +583,11 @@ main {
 }
 
 .extraButtons:hover, .extraButtons:focus {
-  border: 3px solid #321AE8;
+  border: 3px solid #4F86C6;
 }
 
 .correct {
-  font: 900 2rem 'Roboto', sans-serif;
+  font: 900 2rem 'Poppins', sans-serif;
   background-image: -webkit-gradient(linear, right top, left top, from(#bbbb19), color-stop(#a76fcf), to(#1e1eb6));
   background-image: linear-gradient(to left, #bbbb19, #a76fcf, #1e1eb6);
   -webkit-background-clip: text;
@@ -589,7 +599,9 @@ main {
 }
 
 .swal-modal {
-  background: linear-gradient(-45deg, #B38800, #347708, #23a6d5, #321AE8);
+  width: 400px;
+  height: 400px;
+  background: rgba(79, 134, 198, 0.7);
   font-family: 'Bungee Inline', cursive;
 }
 
@@ -680,7 +692,7 @@ main {
 }
 
 .flexFooter p a:hover, .flexFooter p a:focus {
-  color: #321AE8;
+  color: #4F86C6;
 }
 
 .flexFooter li {
@@ -696,7 +708,7 @@ main {
 }
 
 .flexFooter li a:hover, .flexFooter li a:focus {
-  color: #321AE8;
+  color: #4F86C6;
 }
 
 .icon {
@@ -709,7 +721,7 @@ main {
 
 .icon:hover,
 .icon:focus {
-  color: #321AE8;
+  color: #4F86C6;
 }
 
 .devOne,
@@ -837,7 +849,7 @@ main {
 }
 
 body {
-  font: 400 1rem 'Roboto', sans-serif;
+  font: 400 1rem 'Poppins', sans-serif;
   color: white;
 }
 
@@ -846,5 +858,5 @@ img {
 }
 
 h3 {
-  font: 400 2rem 'Roboto', sans-serif;
+  font: 400 2rem 'Poppins', sans-serif;
 }
