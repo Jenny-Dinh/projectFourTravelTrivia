@@ -104,7 +104,7 @@ travelTrivia.displayChoices  = function(array) {
 
 //timer countdown or question to be answered
 travelTrivia.clockTimer = function () {
-    let count = 5;
+    let count = 60;
      travelTrivia.timer = setInterval(function() {
         count--;
         $("#countTimer").html(count);
@@ -115,7 +115,7 @@ travelTrivia.clockTimer = function () {
             .fadeTo(500, 1);
             $('.mainGame').fadeTo('fast', 0.1);
         } 
-        travelTrivia.playAgain();
+        // travelTrivia.playAgain();
     }, 1000);
 }
 
@@ -190,17 +190,17 @@ travelTrivia.endGame = function() {
     .fadeTo('slow', 1);
 }
 
-travelTrivia.playAgain = function() {
-    $('.playAgain').on('click', function() {
-        $('main').css('display', 'none');
-        $('.restart')
-        .css('z-index', -1)
-        .fadeTo('fast', 0);
-        $('#fiftyFifty, #freePass')
-        .css({'opacity': 1, 'pointer-events': 'initial'})
-        .removeAttr('disabled');
-    })
-}
+// travelTrivia.playAgain = function() {
+//     $('.playAgain').on('click', function() {
+//         $('main').css('display', 'none');
+//         $('.restart')
+//         .css('z-index', -1)
+//         .fadeTo('fast', 0);
+//         $('#fiftyFifty, #freePass')
+//         .css({'opacity': 1, 'pointer-events': 'initial'})
+//         .removeAttr('disabled');
+//     })
+// }
 
 //initalizating 
 travelTrivia.init = function() {
