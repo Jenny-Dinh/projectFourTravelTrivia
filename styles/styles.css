@@ -584,6 +584,7 @@ main {
   color: transparent;
   margin: 0 auto;
   width: 100%;
+  opacity: 0;
 }
 
 .swal-modal {

@@ -30,9 +30,6 @@ travelTrivia.chooseDifficulty = function() {
 
 travelTrivia.displayMainGame = function() {
     $('main').css('display', 'block');
-    $([document.documentElement, document.body]).animate({
-        scrollTop: $("main").offset().top
-    }, 800);
     $('header').slideUp('slow');
     $('.difficulty')
     .fadeTo('slow', 0)
@@ -70,7 +67,7 @@ travelTrivia.getData = function(chosenDifficulty) {
         travelTrivia.counter++;
         if (travelTrivia.counter !== travelTrivia.maxQuestions + 1) {
         $('.mainGame').fadeTo(2200, 1);
-        $('.correct').css('display', 'none');
+        $('.correct').css('opacity', '0');
         travelTrivia.clockTimer();
         travelTrivia.fiftyFiftyButton();
         travelTrivia.freePass();
@@ -107,7 +104,7 @@ travelTrivia.displayChoices  = function(array) {
 
 //timer countdown or question to be answered
 travelTrivia.clockTimer = function () {
-    let count = 60;
+    let count = 5;
      travelTrivia.timer = setInterval(function() {
         count--;
         $("#countTimer").html(count);
@@ -136,7 +133,7 @@ travelTrivia.rightOrWrong = function (correctAnswer) {
                 }
              );
         } else {
-            $('.correct').css('display', 'block');
+            $('.correct').css('opacity', '1');
             $('.mainGame').fadeTo('slow', 0);
             setTimeout(function() {
                 travelTrivia.getData(travelTrivia.difficulty); 
@@ -183,11 +180,6 @@ travelTrivia.freePass = function() {
     })
 }
 
-// scroll to top of the page, n is vertical position of scrollbar in px
-travelTrivia.scrollToTop = function(n) { 
-    $(window).scrollTop(n); 
-} 
-
 travelTrivia.endGame = function() {
     clearInterval(travelTrivia.timer);
     $("#countTimer").html('60');
@@ -200,7 +192,6 @@ travelTrivia.endGame = function() {
 
 travelTrivia.playAgain = function() {
     $('.playAgain').on('click', function() {
-        travelTrivia.scrollToTop(0);
         $('main').css('display', 'none');
         $('.restart')
         .css('z-index', -1)
