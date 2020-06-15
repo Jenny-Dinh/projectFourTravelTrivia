@@ -91,7 +91,7 @@ travelTrivia.getData = function(chosenDifficulty) {
 // display question on the page  
 travelTrivia.displayQuestion = function(array) {
     const question = array['question'];
-    $('.question p').text(`${question}`);
+    $('.question p').html(`${question}`);
 }
 
 // display answers randomly
@@ -101,12 +101,17 @@ travelTrivia.displayChoices  = function(array) {
     let answers = [rightAnswer, ...wrongAnswers];
     answers.sort(function() { return Math.floor(4*Math.random()) });
     for (let i = 0; i <  answers.length; i++ ) {
+        answers[i] = travelTrivia.htmlDecode(answers[i]);
         travelTrivia.buttonChoices[i].value = answers[i];
         travelTrivia.buttonChoices[i].removeAttribute('disabled'); 
-        travelTrivia.buttonChoices[i].style.opacity = "1.0";
+        travelTrivia.buttonChoices[i].style.opacity = "1.0"
     }
     travelTrivia.rightOrWrong(rightAnswer);
     travelTrivia.fiftyFiftyButton(rightAnswer, wrongAnswers);
+}
+travelTrivia.htmlDecode = function (input) {
+    let doc = new DOMParser().parseFromString(input, "text/html");
+    return doc.documentElement.textContent;
 }
 
 //timer countdown or question to be answered
