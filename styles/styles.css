@@ -446,8 +446,8 @@ main {
   font-size: 3rem;
   letter-spacing: 3px;
   padding: 20px 200px;
-  text-align: center;
   margin-bottom: 30px;
+  text-align: center;
 }
 
 .item {
@@ -527,15 +527,14 @@ main {
 }
 
 .answerButtons {
-  font: 400 1.2rem 'Roboto', sans-serif;
+  font: 400 2rem 'Roboto', sans-serif;
   letter-spacing: 0.1em;
   text-transform: capitalize;
-  text-align: center;
   border-radius: 8px;
   border: 3px solid #B38800;
   color: #F2F7F2;
   background: none;
-  padding: 10px 20px;
+  padding: 20px 40px;
   margin: 20px;
   cursor: pointer;
   -webkit-transition: border 0.4s, color 0.4s;
@@ -578,11 +577,13 @@ main {
 }
 
 .correct {
-  width: 200px;
+  font: 900 3rem 'Roboto', sans-serif;
+  background-image: -webkit-gradient(linear, right top, left top, from(#bbbb19), color-stop(#a76fcf), to(#1e1eb6));
+  background-image: linear-gradient(to left, #bbbb19, #a76fcf, #1e1eb6);
+  -webkit-background-clip: text;
+  color: transparent;
   margin: 0 auto;
-  font: 700 2rem 'Roboto', sans-serif;
-  border: 5px solid #321AE8;
-  display: none;
+  width: 100%;
 }
 
 .swal-modal {
@@ -625,7 +626,7 @@ main {
 }
 
 .modalBox p {
-  font: 5rem 'Bungee Inline', cursive;
+  font: 6rem 'Bungee Inline', cursive;
   line-height: 0.8;
   margin: 20px 0;
 }
@@ -715,7 +716,7 @@ main {
   text-align: center;
 }
 
-@media only screen and (max-width: 850px) {
+@media only screen and (max-width: 900px) {
   h1 {
     font-size: 5.5rem;
     margin: 0;
@@ -728,17 +729,17 @@ main {
     font-size: 1rem;
   }
   .question {
-    font-size: 2rem;
+    font-size: 2.5rem;
     padding: 10px 100px;
   }
   .multipleChoices {
     padding: 10px 50px;
   }
   .answerButtons {
-    font-size: 1rem;
+    font-size: 1.3rem;
   }
   .modalBox > p {
-    font-size: 2.5rem;
+    font-size: 3rem;
   }
 }
 
@@ -747,17 +748,28 @@ main {
     height: 70vh;
   }
   h1 {
-    font-size: 3.5rem;
+    font-size: 3rem;
     margin: 0;
   }
   .textContainer > span {
-    font-size: 3.5rem;
+    font-size: 3rem;
+  }
+  .item {
+    width: 60px;
+    height: 60px;
+  }
+  .item .countTimer {
+    font-size: 1.2rem;
+  }
+  .correct {
+    font-size: 2.4rem;
   }
   .question {
-    font-size: 1.3rem;
+    font-size: 1.8rem;
+    padding: 20px;
   }
   .answerButtons {
-    font-size: 0.6rem;
+    font-size: 0.8rem;
     padding: 10px 5px;
     margin: 5px;
   }
@@ -794,15 +806,18 @@ main {
     font-size: 1rem;
     margin: 5px;
   }
-  .question {
-    font-size: 0.7rem;
-  }
   .item {
-    width: 80px;
-    height: 80px;
+    width: 50px;
+    height: 50px;
   }
   .item .countTimer {
+    font-size: 1rem;
+  }
+  .correct {
     font-size: 2rem;
+  }
+  .question {
+    font-size: 1rem;
   }
   .answerButtons {
     margin: 5px;

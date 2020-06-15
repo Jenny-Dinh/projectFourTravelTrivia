@@ -33,9 +33,7 @@ travelTrivia.displayMainGame = function() {
     $([document.documentElement, document.body]).animate({
         scrollTop: $("main").offset().top
     }, 800);
-    $('h1, .textContainer, #startBtn')
-    .css('visibility', 'initial')
-    .fadeTo('slow', 1);
+    $('header').slideUp('slow');
     $('.difficulty')
     .fadeTo('slow', 0)
     .css('z-index', -1);
@@ -71,7 +69,8 @@ travelTrivia.getData = function(chosenDifficulty) {
         arrayOfObj = arrayOfData.results[0];
         travelTrivia.counter++;
         if (travelTrivia.counter !== travelTrivia.maxQuestions + 1) {
-        $('.mainGame').fadeTo(2000, 1);
+        $('.mainGame').fadeTo(2200, 1);
+        $('.correct').css('display', 'none');
         travelTrivia.clockTimer();
         travelTrivia.fiftyFiftyButton();
         travelTrivia.freePass();
@@ -137,6 +136,7 @@ travelTrivia.rightOrWrong = function (correctAnswer) {
                 }
              );
         } else {
+            $('.correct').css('display', 'block');
             $('.mainGame').fadeTo('slow', 0);
             setTimeout(function() {
                 travelTrivia.getData(travelTrivia.difficulty); 

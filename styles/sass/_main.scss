@@ -17,8 +17,8 @@ main {
   font-size: 3rem;
   letter-spacing: 3px;
   padding: 20px 200px;
-  text-align: center;
   margin-bottom: 30px;
+  text-align: center;
 }
 .item {
   margin: 0 auto 20px auto;
@@ -74,15 +74,14 @@ main {
 }
 
 .answerButtons {
-  font: 400 1.2rem 'Roboto', sans-serif;
+  font: 400 2rem 'Roboto', sans-serif;
   letter-spacing: 0.1em;
   text-transform: capitalize;
-  text-align: center;
   border-radius: 8px;
   border: 3px solid $btnColor;
   color: $fontColor;
   background: none;
-  padding: 10px 20px;
+  padding: 20px 40px;
   margin: 20px;
   cursor: pointer;
   transition: border 0.4s, color 0.4s;
@@ -120,12 +119,14 @@ main {
   }
 } 
 .correct {
-  width: 200px;
+  font: 900 3rem 'Roboto', sans-serif;
+  background-image: linear-gradient(to left, rgb(187, 187, 25), rgb(167, 111, 207), rgb(30, 30, 182));   
+  -webkit-background-clip: text;
+  color: transparent;
   margin: 0 auto;
-  font: 700 2rem 'Roboto', sans-serif;
-  border: 5px solid $borderColor;
-  display: none;
+  width: 100%;
 }
+
 .swal-modal {
   background: linear-gradient(-45deg, $btnColor, #347708, #23a6d5, $borderColor);
   font-family: 'Bungee Inline', cursive;
@@ -154,7 +155,7 @@ main {
     max-width: 300px;
   }
   p {
-    font: 5rem 'Bungee Inline', cursive;
+    font: 6rem 'Bungee Inline', cursive;
     line-height: 0.8;
     margin: 20px 0;
   }
