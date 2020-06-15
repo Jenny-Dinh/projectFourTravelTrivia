@@ -1,19 +1,27 @@
 const travelTrivia = {};
 
 travelTrivia.url = 'https://opentdb.com/api.php';
+travelTrivia.startButton = $('#startBtn');
+travelTrivia.difficultyContainer = $('.difficulty');
+travelTrivia.main = $('main');
+travelTrivia.mainGame = $('.mainGame');
 travelTrivia.buttonChoices = $('.answerButtons');
+travelTrivia.fiftyFiftyBtn = $('#fiftyFifty');
+travelTrivia.freePassBtn = $('#freePass');
+travelTrivia.countTimer = $('#countTimer');
+travelTrivia.correctTxt = $('.correct');
 travelTrivia.counter = 0;
 travelTrivia.maxQuestions = 10;
 travelTrivia.timer;
 
 travelTrivia.startGame = function() {
-    $("#startBtn").on('click', function() {
+    travelTrivia.startButton.on('click', function() {
         $('h1, .textContainer, #startBtn')
-        .css('visibility', 'hidden')
-        .fadeTo('slow', 0);
-        $('.difficulty')
-        .fadeTo('slow', 1)
-        .css('z-index', 10); 
+            .css('visibility', 'hidden')
+            .fadeTo('slow', 0);
+        travelTrivia.difficultyContainer
+            .fadeTo('slow', 1)
+            .css('z-index', 10); 
         travelTrivia.getToken();
         travelTrivia.counter = 0; 
     }) 
@@ -29,14 +37,11 @@ travelTrivia.chooseDifficulty = function() {
 }
 
 travelTrivia.displayMainGame = function() {
-    $('main').css('display', 'block');
-    $([document.documentElement, document.body]).animate({
-        scrollTop: $("main").offset().top
-    }, 800);
+    travelTrivia.main.css('display', 'block');
     $('header').slideUp('slow');
-    $('.difficulty')
-    .fadeTo('slow', 0)
-    .css('z-index', -1);
+    travelTrivia.difficultyContainer
+        .fadeTo('slow', 0)
+        .css('z-index', -1);
 }
 
 travelTrivia.getToken = function() {
@@ -69,8 +74,8 @@ travelTrivia.getData = function(chosenDifficulty) {
         arrayOfObj = arrayOfData.results[0];
         travelTrivia.counter++;
         if (travelTrivia.counter !== travelTrivia.maxQuestions + 1) {
-        $('.mainGame').fadeTo(2200, 1);
-        $('.correct').css('display', 'none');
+        travelTrivia.mainGame.fadeTo(2200, 1);
+        travelTrivia.correctTxt.css('opacity', '0');
         travelTrivia.clockTimer();
         travelTrivia.fiftyFiftyButton();
         travelTrivia.freePass();
@@ -102,7 +107,6 @@ travelTrivia.displayChoices  = function(array) {
     }
     travelTrivia.rightOrWrong(rightAnswer);
     travelTrivia.fiftyFiftyButton(rightAnswer, wrongAnswers);
-    console.log(rightAnswer);
 }
 
 //timer countdown or question to be answered
@@ -110,15 +114,14 @@ travelTrivia.clockTimer = function () {
     let count = 60;
      travelTrivia.timer = setInterval(function() {
         count--;
-        $("#countTimer").html(count);
+        travelTrivia.countTimer.html(count);
         if (count == 0) {
             clearInterval(travelTrivia.timer);
             $('.restart')
             .css('z-index', 10)
             .fadeTo(500, 1);
-            $('.mainGame').fadeTo('fast', 0.1);
+            travelTrivia.mainGame.fadeTo('fast', 0.1);
         } 
-        travelTrivia.playAgain();
     }, 1000);
 }
 
@@ -136,23 +139,24 @@ travelTrivia.rightOrWrong = function (correctAnswer) {
                 }
              );
         } else {
-            $('.correct').css('display', 'block');
-            $('.mainGame').fadeTo('slow', 0);
+            travelTrivia.correctTxt.css('opacity', '1');
+            travelTrivia.mainGame.fadeTo('slow', 0);
             setTimeout(function() {
                 travelTrivia.getData(travelTrivia.difficulty); 
             }, 900);   
         }
         clearInterval(travelTrivia.timer);
-        $("#countTimer").html('60');
+        travelTrivia.countTimer.html('60');
     });
 }
+
 //50/50 button to disappear two incorrect answers
 travelTrivia.fiftyFiftyButton = function (rightAnswer, wrongAnswers) {
-    $('#fiftyFifty').off().on('click', function(){
-        $('#fiftyFifty')
-        .fadeTo(500, 0.2)
-        .attr('disabled', 'true')
-        .css('pointer-events', 'none');
+    travelTrivia.fiftyFiftyBtn.off().on('click', function(){
+        travelTrivia.fiftyFiftyBtn
+            .fadeTo(500, 0.2)
+            .attr('disabled', 'true')
+            .css('pointer-events', 'none');
     wrongAnswers.sort(function() { 
         return Math.floor(3 * Math.random()) 
     });
@@ -169,46 +173,28 @@ travelTrivia.fiftyFiftyButton = function (rightAnswer, wrongAnswers) {
 
 // let player move on to the next question without answering current question
 travelTrivia.freePass = function() {
-    $('#freePass').off().on('click', function() {
+    travelTrivia.freePassBtn.off().on('click', function() {
         clearInterval(travelTrivia.timer);
-        $("#countTimer").html('60');
-        $('#freePass')
-        .fadeTo(500, 0.2)
-        .attr('disabled', 'true')
-        .css('pointer-events', 'none');
-        $('.mainGame').fadeTo('slow', 0);
+        travelTrivia.countTimer.html('60');
+        travelTrivia.freePassBtn
+            .fadeTo(500, 0.2)
+            .attr('disabled', 'true')
+            .css('pointer-events', 'none');
+        travelTrivia.mainGame.fadeTo('slow', 0);
         setTimeout(function() {
             travelTrivia.getData(travelTrivia.difficulty); 
         }, 900);
     })
 }
 
-// scroll to top of the page, n is vertical position of scrollbar in px
-travelTrivia.scrollToTop = function(n) { 
-    $(window).scrollTop(n); 
-} 
-
 travelTrivia.endGame = function() {
     clearInterval(travelTrivia.timer);
-    $("#countTimer").html('60');
-    $('main').css('margin-bottom', 50);
-    $('.mainGame').fadeTo('fast', 0);
+    travelTrivia.countTimer.html('60');
+    travelTrivia.main.css('margin-bottom', 50);
+    travelTrivia.mainGame.fadeTo('fast', 0);
     $('.modalBox')
     .css('z-index', 10)
     .fadeTo('slow', 1);
-}
-
-travelTrivia.playAgain = function() {
-    $('.playAgain').on('click', function() {
-        travelTrivia.scrollToTop(0);
-        $('main').css('display', 'none');
-        $('.restart')
-        .css('z-index', -1)
-        .fadeTo('fast', 0);
-        $('#fiftyFifty, #freePass')
-        .css({'opacity': 1, 'pointer-events': 'initial'})
-        .removeAttr('disabled');
-    })
 }
 
 //initalizating 
