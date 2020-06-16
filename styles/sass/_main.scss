@@ -19,6 +19,7 @@ main {
   padding: 20px 200px;
   margin-bottom: 30px;
   text-align: center;
+  word-wrap: break-word;
 }
 .item {
   margin: 0 auto 20px auto;
@@ -130,11 +131,16 @@ main {
 }
 
 .swal-modal {
+  height: auto;
   background: linear-gradient(-45deg, $btnColor, #347708, #23a6d5, $borderColor);
   font-family: 'Bungee Inline', cursive;
     .swal-title,
     .swal-text {
       font-size: 3rem;
+      line-height: 1.5;
+    }
+    .swal-footer {
+      text-align: center;
     }
 }
 

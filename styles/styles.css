@@ -275,6 +275,8 @@ h1 {
   margin: 0;
   text-shadow: -20px 20px 10px #111;
   letter-spacing: 5px;
+  line-height: 1;
+  margin-top: 30px;
 }
 
 .textContainer > span {
@@ -284,6 +286,7 @@ h1 {
   -webkit-animation: glow 2s ease-in-out infinite;
           animation: glow 2s ease-in-out infinite;
   letter-spacing: 5px;
+  line-height: 1;
 }
 
 @-webkit-keyframes glow {
@@ -316,6 +319,8 @@ h1 {
   background-image: linear-gradient(to left, #188ec5, #ca97ee, #479ee6);
   -webkit-background-clip: text;
   color: transparent;
+  max-width: 590px;
+  margin: 30px auto 40px auto;
 }
 
 .textContainer > span:nth-child(2) {
@@ -458,6 +463,7 @@ main {
   padding: 20px 200px;
   margin-bottom: 30px;
   text-align: center;
+  word-wrap: break-word;
 }
 
 .item {
@@ -599,15 +605,19 @@ main {
 }
 
 .swal-modal {
-  width: 400px;
-  height: 400px;
-  background: rgba(79, 134, 198, 0.7);
+  height: auto;
+  background: linear-gradient(-45deg, #B38800, #347708, #23a6d5, #4F86C6);
   font-family: 'Bungee Inline', cursive;
 }
 
 .swal-modal .swal-title,
 .swal-modal .swal-text {
   font-size: 3rem;
+  line-height: 1.5;
+}
+
+.swal-modal .swal-footer {
+  text-align: center;
 }
 
 .modalBox {
