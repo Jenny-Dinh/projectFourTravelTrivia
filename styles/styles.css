@@ -275,6 +275,8 @@ h1 {
   margin: 0;
   text-shadow: -20px 20px 10px #111;
   letter-spacing: 5px;
+  line-height: 1;
+  margin-top: 30px;
 }
 
 .intro {
@@ -286,6 +288,8 @@ h1 {
   background-image: linear-gradient(to left, #188ec5, #ca97ee, #479ee6);
   -webkit-background-clip: text;
   color: transparent;
+  max-width: 590px;
+  margin: 30px auto 40px auto;
 }
 
 .textContainer > span {
@@ -295,6 +299,7 @@ h1 {
   -webkit-animation: glow 2s ease-in-out infinite;
           animation: glow 2s ease-in-out infinite;
   letter-spacing: 5px;
+  line-height: 1;
 }
 
 @-webkit-keyframes glow {
