@@ -25,6 +25,15 @@ h1 {
     text-shadow: -20px 20px 10px #111;
     letter-spacing: 5px;
 }
+.intro {
+    color: $borderColor;
+    font-weight: 400; 
+    font-size: 1.5rem;
+    font-family: 'Poppins', sans-serif;
+    background-image: linear-gradient(to left, rgb(24, 142, 197), rgb(202, 151, 238), rgb(71, 158, 230)); 
+    -webkit-background-clip: text;  
+    color: transparent;
+}
 
 .textContainer > span {
     font-family: 'Bungee Inline', cursive;
