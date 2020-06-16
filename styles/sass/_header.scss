@@ -24,6 +24,8 @@ h1 {
     margin: 0;
     text-shadow: -20px 20px 10px #111;
     letter-spacing: 5px;
+    line-height: 1;
+    margin-top: 30px;
 }
 
 .textContainer > span {
@@ -32,6 +34,7 @@ h1 {
     text-transform: uppercase;
     animation: glow 2s ease-in-out infinite;
     letter-spacing: 5px;
+    line-height: 1;
   }
   
   @keyframes glow {
@@ -53,6 +56,8 @@ h1 {
     background-image: linear-gradient(to left, rgb(24, 142, 197), rgb(202, 151, 238), rgb(71, 158, 230));   
     -webkit-background-clip: text;   
     color: transparent;
+    max-width: 590px;
+    margin: 30px auto 40px auto;
   }
 
   
