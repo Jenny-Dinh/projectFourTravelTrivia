@@ -605,8 +605,9 @@ main {
 }
 
 .swal-modal {
+  max-width: 400px;
   height: auto;
-  background: linear-gradient(-45deg, #B38800, #347708, #23a6d5, #4F86C6);
+  background: rgba(79, 134, 198, 0.7);
   font-family: 'Bungee Inline', cursive;
 }
 
@@ -614,6 +615,10 @@ main {
 .swal-modal .swal-text {
   font-size: 3rem;
   line-height: 1.5;
+}
+
+.swal-modal .swal-text {
+  text-align: center;
 }
 
 .swal-modal .swal-footer {
