@@ -99,7 +99,6 @@ travelTrivia.displayChoices  = function(array) {
     let rightAnswer = array['correct_answer'];
     let wrongAnswers = array['incorrect_answers'];
     let answers = [rightAnswer, ...wrongAnswers];
-    console.log(rightAnswer);
     answers.sort(function() { return Math.floor(4*Math.random()) });
     for (let i = 0; i <  answers.length; i++ ) {
         travelTrivia.buttonChoices[i].value = answers[i];
@@ -157,7 +156,6 @@ travelTrivia.rightOrWrong = function (correctAnswer) {
 travelTrivia.percentageBar = function (percentage) {
     $('.barPercentage[data-percentage]').each(function () {
         let increase = $(this);
-        console.log(percentage);
         $({countNum: 0}).animate({countNum: percentage}, {
           duration: 2000,
           easing:'linear',
