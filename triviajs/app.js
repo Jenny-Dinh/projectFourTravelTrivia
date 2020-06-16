@@ -142,12 +142,12 @@ travelTrivia.rightOrWrong = function (correctAnswer) {
             travelTrivia.correctTxt.css('opacity', '1');
             travelTrivia.mainGame.fadeTo('slow', 0);
             setTimeout(function() {
+                travelTrivia.percentageBar((travelTrivia.counter));
                 travelTrivia.getData(travelTrivia.difficulty); 
             }, 1500);   
 
           
         }
-        travelTrivia.percentageBar((travelTrivia.counter));
         clearInterval(travelTrivia.timer);
         travelTrivia.countTimer.html('60');
     });
