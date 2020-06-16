@@ -277,6 +277,17 @@ h1 {
   letter-spacing: 5px;
 }
 
+.intro {
+  color: #4F86C6;
+  font-weight: 400;
+  font-size: 1.5rem;
+  font-family: 'Poppins', sans-serif;
+  background-image: -webkit-gradient(linear, right top, left top, from(#188ec5), color-stop(#ca97ee), to(#479ee6));
+  background-image: linear-gradient(to left, #188ec5, #ca97ee, #479ee6);
+  -webkit-background-clip: text;
+  color: transparent;
+}
+
 .textContainer > span {
   font-family: 'Bungee Inline', cursive;
   font-size: 9rem;
