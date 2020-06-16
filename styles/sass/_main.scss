@@ -19,8 +19,8 @@ main {
   padding: 20px 200px;
   margin-bottom: 30px;
   text-align: center;
+  word-wrap: break-word;
 }
-
 .item {
   margin: 0 auto 20px auto;
   width: 80px;
@@ -84,7 +84,6 @@ main {
   background: none;
   padding: 15px 40px;
   margin: 20px;
-  padding: 10px 20px;
   cursor: pointer;
   transition: border 0.4s, color 0.4s;
   &:hover,
@@ -132,13 +131,20 @@ main {
 }
 
 .swal-modal {
-  background: rgba($color: $borderColor, $alpha: 0.7);
+  max-width: 400px;
+  height: auto;
+  background: rgba(79, 134, 198, 0.7);
   font-family: 'Bungee Inline', cursive;
     .swal-title,
     .swal-text {
-      color: white;
       font-size: 3rem;
-      align-items: center;
+      line-height: 1.5;
+    }
+    .swal-text {
+      text-align: center;
+    }
+    .swal-footer {
+      text-align: center;
     }
 }
 
