@@ -143,11 +143,28 @@ travelTrivia.rightOrWrong = function (correctAnswer) {
             travelTrivia.mainGame.fadeTo('slow', 0);
             setTimeout(function() {
                 travelTrivia.getData(travelTrivia.difficulty); 
-            }, 900);   
+            }, 1500);   
+
+          
         }
+        travelTrivia.percentageBar((travelTrivia.counter));
         clearInterval(travelTrivia.timer);
         travelTrivia.countTimer.html('60');
     });
+}
+
+travelTrivia.percentageBar = function (percentage) {
+    $('.barPercentage[data-percentage]').each(function () {
+        let increase = $(this);
+        $({countNum: 0}).animate({countNum: percentage}, {
+          duration: 2000,
+          easing:'linear',
+          step: function() {
+            let pct = Math.floor((this.countNum) * 10) + '%';
+            increase.text(`${percentage}/10`) && increase.siblings().children().css('width',pct);
+          }
+        });
+      });
 }
 
 //50/50 button to disappear two incorrect answers

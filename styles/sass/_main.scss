@@ -172,3 +172,53 @@ main {
     margin: 20px 0;
   }
 }
+
+#containerBar { 
+  text-align: center; 
+  margin: 20px; 
+}
+
+.barMain {
+  margin: 10px auto;
+  width: 100%;
+  height: 50px;
+  border-radius: 4px;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 400;
+  font-size: 0.5em;
+  color: #FFF;
+}
+
+.wrap { 
+  padding: 8px; 
+}
+
+.barPercentage {
+  float: left;
+  border-radius: 4px;
+  padding: 7px 0px;
+  width: 18%;
+  height: 30px;
+}
+
+.barContainer {
+  float: right;
+  border-radius: 10px;
+  height: 10px;
+  background: rgba(0,0,0,0.13);
+  width: 78%;
+  margin: 12px 0px;
+  overflow: hidden;
+}
+
+.bar {
+  float: left;
+  background: $btnColor;
+  height: 100%;
+  border-radius: 10px 0px 0px 10px;
+  opacity: 1;
+}
+
+.babyBlue { 
+  background: #4F86C6; 
+}
