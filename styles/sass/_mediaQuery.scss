@@ -107,13 +107,17 @@
     .question {
         font-size: 1rem;
     }
+    .choicesContainer {
+        display: grid;
+        grid-template-columns: 2fr;
+    }
 
     .answerButtons {
         margin: 5px;
     }
     .restart {
         width: 300px;
-        height: 250px;
+        height: 350px;
     }
     .modalBox  {
         img {

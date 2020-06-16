@@ -99,6 +99,7 @@ travelTrivia.displayChoices  = function(array) {
     let rightAnswer = array['correct_answer'];
     let wrongAnswers = array['incorrect_answers'];
     let answers = [rightAnswer, ...wrongAnswers];
+    console.log(rightAnswer);
     answers.sort(function() { return Math.floor(4*Math.random()) });
     for (let i = 0; i <  answers.length; i++ ) {
         answers[i] = travelTrivia.htmlDecode(answers[i]);
@@ -148,11 +149,29 @@ travelTrivia.rightOrWrong = function (correctAnswer) {
             travelTrivia.mainGame.fadeTo('slow', 0);
             setTimeout(function() {
                 travelTrivia.getData(travelTrivia.difficulty); 
-            }, 900);   
+            }, 1500);   
+
+          
         }
+        travelTrivia.percentageBar((travelTrivia.counter));
         clearInterval(travelTrivia.timer);
         travelTrivia.countTimer.html('60');
     });
+}
+
+travelTrivia.percentageBar = function (percentage) {
+    $('.barPercentage[data-percentage]').each(function () {
+        let increase = $(this);
+        console.log(percentage);
+        $({countNum: 0}).animate({countNum: percentage}, {
+          duration: 2000,
+          easing:'linear',
+          step: function() {
+            let pct = Math.floor((this.countNum) * 10) + '%';
+            increase.text(`${percentage}/10`) && increase.siblings().children().css('width',pct);
+          }
+        });
+      });
 }
 
 //50/50 button to disappear two incorrect answers
